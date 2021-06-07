@@ -27,20 +27,20 @@ dist.to_csv('./data/results/distances.csv')
 ###
 # topojson
 ###
-import code
-code.interact(local=locals())
+# import code
+# code.interact(local=locals())
 sql = 'SELECT geoid as id, geometry FROM nearest_block WHERE population > 0'
 blocks = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
-blocks_topo = tp.Topology(blocks)#, prequantize=1000)#, 
+blocks_topo = tp.Topology(blocks, prequantize=1000)#, 
                 # simplify_with='simplification', 
                 # simplify_algorithm='vw', 
                 # topoquantize=0.01)
-blocks_topo = blocks_topo.toposimplify(
-    epsilon=1,
-    simplify_algorithm='vw', 
-    simplify_with='simplification', 
-    prevent_oversimplify=True
-)
+# blocks_topo = blocks_topo.toposimplify(
+#     epsilon=1,
+#     simplify_algorithm='vw', 
+#     simplify_with='simplification', 
+#     prevent_oversimplify=True
+# )
 blocks_topo.to_json('./data/results/blocks.topojson')
 
 ###
