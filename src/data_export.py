@@ -27,21 +27,10 @@ dist.to_csv('./data/results/distances.csv')
 ###
 # topojson
 ###
-# import code
-# code.interact(local=locals())
-sql = 'SELECT geoid as id, geometry FROM nearest_block WHERE population > 0'
-blocks = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
-blocks_topo = tp.Topology(blocks).topoquantize(1e6)#, 
-                # simplify_with='simplification', 
-                # simplify_algorithm='vw', 
-                # topoquantize=0.01)
-# blocks_topo = blocks_topo.toposimplify(
-#     epsilon=1,
-#     simplify_algorithm='vw', 
-#     simplify_with='simplification', 
-#     prevent_oversimplify=True
-# )
-blocks_topo.to_json('./data/results/blocks.topojson')
+# sql = 'SELECT geoid as id, geometry FROM nearest_block WHERE population > 0'
+# blocks = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
+# blocks_topo = tp.Topology(blocks).topoquantize(1e6)
+# blocks_topo.to_json('./data/results/blocks.topojson')
 
 ###
 # destinations: dest_type, lat, lon
@@ -53,25 +42,48 @@ dist.to_csv('./data/results/destinations.csv')
 ###
 # histogram and cdf
 ###
+
 # import data
-sql = "SELECT geoid, dest_type, distance, population FROM nearest_block WHERE population > 0"
-df = pd.read_sql(sql, db['con'])
+sql = "SELECT geoid, dest_type, distance, population, geometry  FROM nearest_block WHERE population > 0"
+df = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
+zones = gpd.read_file('./data/raw/TransportZones.gdb', driver='FileGDB',layer='TransportZoneBoundaries')
+zones = zones[['Location','geometry']]
+zones = zones.to_crs(df.crs)
+df = gpd.sjoin(df, zones, how='inner', op='within')
 # set bins
 bins = 100#list(range(0,21))
 # create hist and cdf
 hists = []
-for service in df.dest_type.unique():
-    df_sub = df[df.dest_type==service]
+regions = df['Location'].unique()
+for service in df['dest_type'].unique():
+    df_sub = df[df['dest_type']==service]
     # create the hist
-    density, division = np.histogram(df_sub.distance/1000, bins = bins, weights=df_sub.population, density=True)
+    # import code
+    # code.interact(local=locals())
+    density, division = np.histogram(df_sub['distance']/1000, bins = bins, weights=df_sub['population'], density=True)
     unity_density = density / density.sum()
     unity_density = np.append(0, unity_density)
     division = np.append(0, division)
     df_new = pd.DataFrame({'pop_perc':unity_density, 'distance':division[:-1]})
+    df_new['region'] = 'all'
     df_new['service']=service
     df_new['pop_perc'] = df_new['pop_perc']*100
-    df_new['pop_perc_cum'] = df_new.pop_perc.cumsum()
+    df_new['pop_perc_cum'] = df_new['pop_perc'].cumsum()
     hists.append(df_new)
+    for region in regions:
+        df_sub = df[(df['dest_type']==service)&(df['Location']==region)]
+        # create the hist
+        density, division = np.histogram(df_sub['distance']/1000, bins = bins, weights=df_sub['population'], density=True)
+        unity_density = density / density.sum()
+        unity_density = np.append(0, unity_density)
+        division = np.append(0, division)
+        df_new = pd.DataFrame({'pop_perc':unity_density, 'distance':division[:-1]})
+        df_new['service']=service
+        df_new['pop_perc'] = df_new['pop_perc']*100
+        df_new['pop_perc_cum'] = df_new['pop_perc'].cumsum()
+        df_new['region'] = region
+        hists.append(df_new)
+
 # concat
 df_hists = pd.concat(hists)
 # export
