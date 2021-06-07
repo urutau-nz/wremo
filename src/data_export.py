@@ -27,28 +27,10 @@ dist.to_csv('./data/results/distances.csv')
 ###
 # topojson
 ###
-import code
-code.interact(local=locals())
-sql = 'SELECT geoid, geometry FROM nearest_block'
+sql = 'SELECT geoid as id, geometry FROM nearest_block'
 blocks = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
-blocks_topo = tp.Topology(blocks).topoquantize(100) #.to_alt().properties(title='WITH Topoquantization')
+blocks_topo = tp.Topology(blocks).topoquantize(1000) #.to_alt().properties(title='WITH Topoquantization')
 blocks_topo.to_json('./data/results/blocks.topojson')
-with open('./data/results/blocks.topojson', 'w') as outfile:
-    json.dump(blocks_topo, outfile)
-
-
-cursor = db['con'].cursor()
-sql = '''SELECT jsonb_build_object(
-    'type',       'Feature',
-    'id',         geoid,
-    'geometry',   ST_AsGeoJSON(geometry)::jsonb,
-    'properties', to_jsonb(row) - 'gid' - 'geom'
-) FROM (SELECT geoid, geometry FROM nearest_block) row;
- '''
-cursor.execute(sql)
-result_set = cursor.fetchall()
-with open('./data/results/blocks.gjson', 'w') as outfile:
-    json.dump(result_set, outfile)
 
 ###
 # destinations: dest_type, lat, lon
