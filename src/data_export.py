@@ -29,7 +29,7 @@ dist.to_csv('./data/results/distances.csv')
 ###
 sql = 'SELECT geoid as id, geometry FROM nearest_block WHERE population > 0'
 blocks = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
-blocks_topo = tp.Topology(blocks, simplify_with='simplification', simplify_algorithm='vw', toposimplify=4, topoquantize=1000) #.to_alt().properties(title='WITH Topoquantization')
+blocks_topo = tp.Topology(blocks, simplify_with='simplification', simplify_algorithm='vw', topoquantize=2000) #.to_alt().properties(title='WITH Topoquantization')
 blocks_topo.to_json('./data/results/blocks.topojson')
 
 ###
