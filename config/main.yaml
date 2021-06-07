@@ -4,12 +4,12 @@ set_up:
   projection: 4326
   # Use a seperate file for each dest type, use the same order as 'services' below
   destination_file_directory:
-    # - supermarkets?
+    # - /homedirs/projects/wremo/data/raw/wremo_supermarkets.csv
     - /homedirs/projects/wremo/data/raw/All_CIR_Nodes.shp
     - /homedirs/projects/wremo/data/raw/Community_EM_Hubs_2017.shp
   # name of column in shapefile to keep for matching with destination data
   dest_id_colname:
-    # - Object_ID
+    - id_dest
     - Node_Uniqu
     - OBJECTID
   origin_file_directory: /homedirs/projects/wremo/data/raw/wremo_sa1.shp
@@ -17,7 +17,7 @@ orig_id: SA12018_V1
 
 # Which services do you want to evalaute? (must match 'dest_type' name from destination matix, unless script_mode='setup') TYPE: lst of str's
 services:
-  # - supermarket
+  - supermarket
   - water
   - EM_hubs
 

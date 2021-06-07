@@ -14,4 +14,5 @@ src/test.py
 inequality_function_test.py
 *.ai
 *.pdf
+*.pyc
 

@@ -44,8 +44,8 @@ def main(config_filename=None):
     db = init_db(config)
 
     # add origins and destinations
-    init_destinations(db, config)
-    init_origins(db, config)
+    # init_destinations(db, config)
+    # init_origins(db, config)
     
     # query
     query.main(config)
