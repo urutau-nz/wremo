@@ -5,6 +5,9 @@ import yaml
 import main
 import pandas as pd
 import numpy as np
+import json
+import geopandas as gpd
+import topojson as tp
 
 config_filename = 'main'
 # import config file
@@ -24,8 +27,28 @@ dist.to_csv('./data/results/distances.csv')
 ###
 # topojson
 ###
+import code
+code.interact(local=locals())
+sql = 'SELECT geoid, geometry FROM nearest_block'
+blocks = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
+blocks_topo = tp.Topology(blocks).topoquantize(100) #.to_alt().properties(title='WITH Topoquantization')
+blocks_topo.to_json('./data/results/blocks.topojson')
+with open('./data/results/blocks.topojson', 'w') as outfile:
+    json.dump(blocks_topo, outfile)
 
 
+cursor = db['con'].cursor()
+sql = '''SELECT jsonb_build_object(
+    'type',       'Feature',
+    'id',         geoid,
+    'geometry',   ST_AsGeoJSON(geometry)::jsonb,
+    'properties', to_jsonb(row) - 'gid' - 'geom'
+) FROM (SELECT geoid, geometry FROM nearest_block) row;
+ '''
+cursor.execute(sql)
+result_set = cursor.fetchall()
+with open('./data/results/blocks.gjson', 'w') as outfile:
+    json.dump(result_set, outfile)
 
 ###
 # destinations: dest_type, lat, lon
@@ -47,10 +70,11 @@ hists = []
 for service in df.dest_type.unique():
     df_sub = df[df.dest_type==service]
     # create the hist
-    count, division = np.histogram(df_sub.distance/1000, bins = bins, weights=df_sub.population, density=True)
-    count = np.append(0, count)
+    density, division = np.histogram(df_sub.distance/1000, bins = bins, weights=df_sub.population, density=True)
+    unity_density = density / density.sum()
+    unity_density = np.append(0, unity_density)
     division = np.append(0, division)
-    df_new = pd.DataFrame({'pop_perc':count, 'distance':division[:-1]})
+    df_new = pd.DataFrame({'pop_perc':unity_density, 'distance':division[:-1]})
     df_new['service']=service
     df_new['pop_perc'] = df_new['pop_perc']*100
     df_new['pop_perc_cum'] = df_new.pop_perc.cumsum()
