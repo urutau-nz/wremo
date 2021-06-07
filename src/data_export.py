@@ -14,22 +14,22 @@ with open('./config/{}.yaml'.format(config_filename)) as file:
 # connect to the psql database
 db = main.init_db(config)
 
-# histogram data
-
-
-
+###
 # distance as csv - only nonzero pop
+###
 sql = "SELECT geoid, dest_type, distance FROM nearest_block WHERE population > 0"
 dist = pd.read_sql(sql, db['con'])
 dist.to_csv('./data/results/distances.csv')
 
-
+###
 # topojson
+###
 
 
 
-
+###
 # destinations: dest_type, lat, lon
+###
 sql = "SELECT dest_type, st_x(geom) as lon, st_y(geom) as lat FROM destinations"
 dist = pd.read_sql(sql, db['con'])
 dist.to_csv('./data/results/destinations.csv')
@@ -41,7 +41,7 @@ dist.to_csv('./data/results/destinations.csv')
 sql = "SELECT geoid, dest_type, distance, population FROM nearest_block WHERE population > 0"
 df = pd.read_sql(sql, db['con'])
 # set bins
-bins = list(range(0,21))
+bins = 100#list(range(0,21))
 # create hist and cdf
 hists = []
 for service in df.dest_type.unique():
