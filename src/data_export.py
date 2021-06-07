@@ -65,7 +65,7 @@ for service in df['dest_type'].unique():
     unity_density = np.append(0, unity_density)
     division = np.append(0, division)
     df_new = pd.DataFrame({'pop_perc':unity_density, 'distance':division[:-1]})
-    df_new['region'] = 'all'
+    df_new['region'] = 'All'
     df_new['service']=service
     df_new['pop_perc'] = df_new['pop_perc']*100
     df_new['pop_perc_cum'] = df_new['pop_perc'].cumsum()
