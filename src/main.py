@@ -13,6 +13,7 @@ from sqlalchemy_utils import database_exists, create_database
 import osgeo.ogr
 import geopandas as gpd
 import shapely
+from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 from shapely.geometry.multipolygon import MultiPolygon
 from geoalchemy2 import Geometry, WKTElement
@@ -44,7 +45,7 @@ def main(config_filename=None):
     db = init_db(config)
 
     # add origins and destinations
-    # init_destinations(db, config)
+    init_destinations(db, config)
     # init_origins(db, config)
     
     # query
@@ -137,6 +138,12 @@ def init_destinations(db, config):
         for dest_type in types:
             file = config['set_up']['destination_file_directory'][count]
             df_type = gpd.read_file(r'{}'.format(file))
+            if dest_type == 'supermarket':
+                df_type['lon'] = list(df_type['X'].astype(float))
+                df_type['lat'] = list(df_type['Y'].astype(float))
+                geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
+                crs = {'init': 'epsg:{}'.format(projection)}
+                df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
             # df_type = pd.read_csv('data/destinations/' + dest_type + '_FL.csv', encoding = "ISO-8859-1", usecols = ['id','name','lat','lon'])
             df_type['dest_type'] = dest_type
             df_type = df_type.to_crs("EPSG:{}".format(projection))
