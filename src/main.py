@@ -144,6 +144,12 @@ def init_destinations(db, config):
                 geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
                 crs = {'init': 'epsg:{}'.format(projection)}
                 df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
+            if dest_type == 'health_services':
+                df_type['lon'] = list(df_type['X'].astype(float))
+                df_type['lat'] = list(df_type['Y'].astype(float))
+                geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
+                crs = {'init': 'epsg:{}'.format(projection)}
+                df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
             # df_type = pd.read_csv('data/destinations/' + dest_type + '_FL.csv', encoding = "ISO-8859-1", usecols = ['id','name','lat','lon'])
             df_type['dest_type'] = dest_type
             df_type = df_type.to_crs("EPSG:{}".format(projection))

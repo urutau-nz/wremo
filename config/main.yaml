@@ -7,11 +7,13 @@ set_up:
     - /homedirs/projects/wremo/data/raw/wremo_supermarkets.csv
     - /homedirs/projects/wremo/data/raw/water_distribution_nodes.shp
     - /homedirs/projects/wremo/data/raw/Community_EM_Hubs_2017.shp
+    - /homedirs/projects/wremo/data/raw/wlg_health_services.csv
   # name of column in shapefile to keep for matching with destination data
   dest_id_colname:
     - id_dest
     - Node_Uniqu
     - OBJECTID
+    - dest_id
   origin_file_directory: /homedirs/projects/wremo/data/raw/wremo_sa1.shp
 orig_id: SA12018_V1
 
@@ -20,6 +22,7 @@ services:
   - supermarket
   - water
   - EM_hubs
+  - health_services
 
 # What mode of transport are you evaluating? ['driving', 'walking', 'cycling'] TYPE: str
 transport_mode: driving
