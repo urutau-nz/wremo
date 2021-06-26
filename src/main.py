@@ -46,7 +46,7 @@ def main(config_filename=None):
 
     # add origins and destinations
     init_destinations(db, config)
-    # init_origins(db, config)
+    init_origins(db, config)
     
     # query
     query.main(config)
@@ -92,13 +92,28 @@ def init_origins(db, config):
     # import and project
     origin = gpd.read_file(r'{}'.format(config['set_up']['origin_file_directory']))
     origin = origin.to_crs("EPSG:{}".format(projection))
-    # remove MultiPolygons
+    # import transport zone for clip
+    zones = gpd.read_file('./data/raw/TransportZones.gdb', driver='FileGDB',layer='TransportZoneBoundaries')
+    zones = zones[['Location','geometry']]
+    zones['geometry'] = zones.geometry.buffer(-10)
+    zones = zones.to_crs(origin.crs)
+    
+    # clip
+    origin = gpd.clip(origin, zones)
+    # remove MultiPolygons by taking the largest
+    is_mp = [type(origin.loc[i].geometry)==MultiPolygon for i in origin.index]
+    # origin = origin[[not i for i in is_mp]]
+    count_mp = sum(is_mp)
+    print("There were ", count_mp, "Multipolygons found and largest kept")
+    for o in origin.index:
+        p = origin.loc[o].geometry
+        if p.geom_type == 'MultiPolygon':
+            # print(o)
+            # mp = p
+            origin.loc[o,'geometry'] = max(p, key=lambda a: a.area)
+            # print(origin.loc[o].geometry)
     # import code
     # code.interact(local=locals())
-    is_mp = [type(origin.geometry[i])==MultiPolygon for i in range(len(origin))]
-    origin = origin[[not i for i in is_mp]]
-    count_mp = sum(is_mp)
-    print("There were ", count_mp, "Multipolygons found and removed")
     # origin = _explode(origin)
     # export to sql
     # blocks    
