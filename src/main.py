@@ -99,7 +99,7 @@ def init_origins(db, config):
     zones = zones.to_crs(origin.crs)
     
     # clip
-    origin = gpd.clip(origin, zones)
+    #origin = gpd.clip(origin, zones)
     # remove MultiPolygons by taking the largest
     is_mp = [type(origin.loc[i].geometry)==MultiPolygon for i in origin.index]
     # origin = origin[[not i for i in is_mp]]

@@ -33,10 +33,10 @@ def main(db):
         # INNER JOIN blocks ON  distances.id_orig = blocks.geoid
         # GROUP BY distances.id_orig, destinations.dest_type;
         # """,
-        'CREATE TABLE IF NOT EXISTS nearest_block(geoid TEXT, dest_type TEXT, distance INT, population INT, geometry geometry)'
+        'CREATE TABLE IF NOT EXISTS nearest_block(geoid TEXT, dest_type TEXT, distance INT, duration INT, population INT, geometry geometry)'
     ]
-    queries_2 = [''' INSERT INTO nearest_block (geoid, dest_type, distance, population, geometry)
-            SELECT dist.id_orig as geoid, destinations.dest_type, MIN(dist.distance) as distance, blocks."C18_CURPop" as population, blocks.geometry
+    queries_2 = [''' INSERT INTO nearest_block (geoid, dest_type, distance, duration, population, geometry)
+            SELECT dist.id_orig as geoid, destinations.dest_type, MIN(dist.distance) as distance, MIN(dist.duration) as duration, blocks."C18_CURPop" as population, blocks.geometry
             FROM distance as dist
             INNER JOIN destinations ON dist.id_dest = destinations.id_dest
             INNER JOIN blocks ON  dist.id_orig = blocks."SA12018_V1"
