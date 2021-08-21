@@ -1,4 +1,4 @@
-﻿dest_id,dest_type,lat,lon,label,0_7,8_14,15_30,31_90,90+,nearest_priority_road,dist_to_priority_road,suburb_resupply_day
+﻿dest_id,dest_type,lat,lon,label,1,2,3,4,5,nearest_priority_road,dist_to_priority_road,suburb_resupply_day
 1,supermarket,-41.30427856,174.7941162,Four Square Hataitai,3,3,1,1,1,1,200,10
 2,supermarket,-41.11027207,175.082087,Four Square Totara Park,3,3,3,2,1,3,200,Oct-90
 3,supermarket,-41.2900718,174.8972291,Four Square Eastbourne,3,3,3,3,1,2,2000,90
