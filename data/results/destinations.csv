@@ -1,22 +1,22 @@
-dest_id	dest_type	lat	lon	label	address	1	2	3	4	5	nearest_priority_road	dist_to_priority_road	suburb_resupply_day	comments
+dest_id	dest_type	y	x	label	address	1	2	3	4	5	nearest_priority_road	dist_to_priority_road	suburb_resupply_day	comments
 1	supermarket	-41.30427856	174.7941162	Four Square Hataitai	"1 Moxham Ave, Hataitai, Wellington, 6021, NZL"	3	3	1	1	1	1	200	10	Close to a priority 2 road. Road vulnerability mapping indicates that access via Constable St/Wellington Rd should be available by day 15. 
-2	supermarket	-41.11027207	175.082087	Four Square Totara Park	"1 Turon Cres, Totara Park, Upper Hutt, 5018, NZL"	3	3	3	2	1	3	200	Oct-90	Close to a priority 3 road. Hutt Valley access is weather dependant until 'day 90'.
+2	supermarket	-41.11027207	175.082087	Four Square Totara Park	"1 Turon Cres, Totara Park, Upper Hutt, 5018, NZL"	3	3	3	2	1	3	200	10/90	Close to a priority 3 road. Hutt Valley access is weather dependant until 'day 90'.
 3	supermarket	-41.2900718	174.8972291	Four Square Eastbourne	"10 Oroua St, Eastbourne, Lower Hutt, 5013, NZL"	3	3	3	3	1	2	2000	90	
-4	supermarket	-41.115265	175.1022182	Four Square Hutt	"103 ARO STREET, EBDENTOWN, UPPER HUTT"	3	2	2	2	1	1	300	Oct-90	
+4	supermarket	-41.115265	175.1022182	Four Square Hutt	"103 ARO STREET, EBDENTOWN, UPPER HUTT"	3	2	2	2	1	1	300	10/90	
 5	supermarket	-41.08049745	175.4588409	Fresh Choice Greytown	"12 Hastwell St, Greytown, 5712, NZL"	3	3	3	1	1	1	50	21	
 6	supermarket	-41.1320795	174.8413607	Pak'N Save Porirua	"12 Parumoana St, Porirua City Centre, Porirua, 5022, NZL"	3	1	1	1	1	1	200	7	Road vulnerability mapping indicates that access to the prioity 1 road should be good. 
 7	supermarket	-41.254398	174.7661332	Countdown Churchill Drive	"Churchill Dr & Silverstream Rd, Crofton Downs, Wellington, 6035, NZL"	3	1	1	1	1	1	0	7	Close to a priority 1 road.
 8	supermarket	-40.90572476	174.9972301	Four Square Kapiti	"128 Kapiti Rd, Paraparaumu, 5032, NZL"	3	1	1	1	1	1	100	7	Close to a priority 1 road.
-9	supermarket	-41.21437366	174.9224917	Four Square Waterloo	"13 Hardy St, Waterloo, Lower Hutt, 5011, NZL"	3	3	2	2	1	1	200	Oct-90	Close to a priority 1 road. Road vulnerability mapping indicates that road access to the priority 1 road should be good. 
+9	supermarket	-41.21437366	174.9224917	Four Square Waterloo	"13 Hardy St, Waterloo, Lower Hutt, 5011, NZL"	3	3	2	2	1	1	200	10/90	Close to a priority 1 road. Road vulnerability mapping indicates that road access to the priority 1 road should be good. 
 10	supermarket	-41.1083702	174.8383205	Four Square Titahi Bay	"13 Whitehouse Rd, Titahi Bay, Porirua, 5022, NZL"	3	1	1	1	1	2	0	7	Close to a priority 2 road.
-11	supermarket	-41.12309062	175.0715947	Countdown Upper Hutt	"19 Queen St, Upper Hutt, 5018, NZL"	3	2	2	2	1	1	300	Oct-90	Close to a priority 1 road. Road vulnerability mapping indicates that road access to the priority 1 road should be good. 
+11	supermarket	-41.12309062	175.0715947	Countdown Upper Hutt	"19 Queen St, Upper Hutt, 5018, NZL"	3	2	2	2	1	1	300	10/90	Close to a priority 1 road. Road vulnerability mapping indicates that road access to the priority 1 road should be good. 
 12	supermarket	-41.28238293	174.7458951	Four Square Karori	"147 Karori Rd, Karori, Wellington, 6012, NZL"	3	3	1	1	1	3	0	13	Close to a priority 3 road.
 13	supermarket	-40.75302713	175.1403444	New World Otaki	"163 Main St, Otaki, 5512, NZL"	3	1	1	1	1	2	0	7	Close to priority 2 road.
 14	supermarket	-40.90482785	174.9961658	New World Kapiti	"159 Kapiti Rd, Paraparaumu, 5032, NZL"	3	1	1	1	1	1	100	7	Close to a priority 1 road.
 15	supermarket	-40.89372911	174.9809878	Four Square Thriftway	"16 Seaview Rd, Paraparaumu Beach, Paraparaumu, 5032, NZL"	3	1	1	1	1	2	300	7	Close to a priority 2 road. Road vulnerability mapping indicates that road access to the priority 2 road should be good. 
 16	supermarket	-41.30761432	174.7777352	Countdown Newtown	"176 Adelaide Rd, Newtown, Wellington, 6021, NZL"	3	3	1	1	1	1	100	14	Close to a priority 1 road.
 17	supermarket	-41.1390747	174.8500709	Four Square Eastside Foodmarket	"18 Mungavin Ave, Ranui, Porirua, 5024, NZL"	3	1	1	1	1	1	0	7	Close to a priority 1 road.
-18	supermarket	-41.17974777	174.9593396	Four Square Taita	"18 Taine St, Taita, Lower Hutt, 5011, NZL"	3	2	2	2	1	1	100	Oct-90	Close to a priority 1 road.
+18	supermarket	-41.17974777	174.9593396	Four Square Taita	"18 Taine St, Taita, Lower Hutt, 5011, NZL"	3	2	2	2	1	1	100	10/90	Close to a priority 1 road.
 19	supermarket	-41.3144754	174.7801022	New World Newtown	"195 Riddiford St, Newtown, Wellington, 6021, NZL"	3	3	1	1	1	1	100	14	Close to a priority 1 road.
 20	supermarket	-41.27925336	174.7788568	New World Railway Metro	"Bunny St, Pipitea, Wellington, 6011, NZL"	3	3	1	1	1	1	100	14	Close to a priority 1 road.
 21	supermarket	-40.96210316	175.6246986	Four Square Solway	"218 High St, Solway, Masterton, 5810, NZL"	3	3	3	1	1	1	0	21	
@@ -24,19 +24,19 @@ dest_id	dest_type	lat	lon	label	address	1	2	3	4	5	nearest_priority_road	dist_to_
 23	supermarket	-41.28447021	174.7382412	Countdown Karori	"236 Karori Rd, Karori, Wellington, 6012, NZL"	3	3	1	1	1	3	0	13	Close to a priority 3 road.
 24	supermarket	-41.28447021	174.7382412	New World Karori	"236 Karori Rd, Karori, Wellington, 6012, NZL"	3	3	1	1	1	3	0	13	Close to a priority 3 road.
 25	supermarket	-41.24744591	174.7916963	New World Khandallah	"26 Ganges Rd, Khandallah, Wellington, 6035, NZL"	3	1	1	1	1	1	300	7	Close to a priority 1 road. Road vulnerability mapping indicates that road access to the priority 1 road should be good. 
-26	supermarket	-41.20798018	174.9053259	Countdown Lower Hutt	"261 High St, Hutt Central, Lower Hutt, 5010, NZL"	3	3	3	2	1	2	300	Oct-90	Close to a priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
+26	supermarket	-41.20798018	174.9053259	Countdown Lower Hutt	"261 High St, Hutt Central, Lower Hutt, 5010, NZL"	3	3	3	2	1	2	300	10/90	Close to a priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
 27	supermarket	-41.21957479	175.4580233	Four Square Jellicoe Street	"27 Jellicoe St, Martinborough, 5711, NZL"	3	3	3	1	1				
 28	supermarket	-40.9521996	175.6579909	Countdown Masterton	"271 Queen St, Masterton, 5810, NZL"	3	3	3	1	1	1	200	21	
 29	supermarket	-41.29296588	174.7841214	New World Wellington City	"279 Wakefield St, Te Aro, Wellington, 6011, NZL"	3	3	1	1	1	1	0	14	Close to a priority 1 road.
 30	supermarket	-40.86121254	175.0246524	Four Square Waikanae Beach	"28 Tutere St, Waikanae Beach, Waikanae, 5036, NZL"	3	3	1	1	1	2	500	7	"Although distant from a priority 2 route, road vulnerability mapping shows that one lane should be available on the priority 2 route. Assuming the road damage to be similar on the local roads, assume that access is possible by 'day 15'."
-31	supermarket	-41.14842839	175.012606	New World Silverstream	"28 Whitemans Rd, Silverstream, Upper Hutt, 5019, NZL"	3	3	2	2	1	2	50	Oct-90	Close to a priority 2 road. Hutt Valley access is weather dependant until 'day 90'.
+31	supermarket	-41.14842839	175.012606	New World Silverstream	"28 Whitemans Rd, Silverstream, Upper Hutt, 5019, NZL"	3	3	2	2	1	2	50	10/90	Close to a priority 2 road. Hutt Valley access is weather dependant until 'day 90'.
 32	supermarket	-41.284386	174.7753799	Countdown Cable Car Lane	"284 Lambton Quay, Wellington Central, Wellington, 6011, NZL"	3	3	3	3	1	1	150	10	"Although close to a Priority 1 road, this supermarket is located within an area of multi-storey buildings. This lowers the likelihood of unimpeded access post-earthquake event."
 33	supermarket	-41.18562436	174.8274002	Countdown Tawa	"3 Main Rd, Tawa, Wellington, 5028, NZL"	3	1	1	1	1	1	100	7	Close to a priority 1 road.
 34	supermarket	-41.12107485	174.8672412	Countdown Aotea	"3 Whitford Brown Ave, Ascot Park, Porirua, 5024, NZL"	3	1	1	1	1	2	50	7	Close to a priority 2 road.  
-35	supermarket	-41.19876541	174.9473569	Four Square Naenae	"30 Hillary Ct, Naenae, Lower Hutt, 5011, NZL"	3	3	3	2	1	3	500	Oct-90	"Road vulnerability mapping shows roads in the area are likely to be less impacted, so once access to the priority 3 road is achieved, access to the supermarket is likely to be relatively soon after. Hutt Valley access is weather dependent until 'day 90'."
+35	supermarket	-41.19876541	174.9473569	Four Square Naenae	"30 Hillary Ct, Naenae, Lower Hutt, 5011, NZL"	3	3	3	2	1	3	500	10/90	"Road vulnerability mapping shows roads in the area are likely to be less impacted, so once access to the priority 3 road is achieved, access to the supermarket is likely to be relatively soon after. Hutt Valley access is weather dependent until 'day 90'."
 36	supermarket	-40.93643201	174.9773853	Four Square Raumati South	"30 Poplar Ave, Raumati South, Paraparaumu, 5032, NZL"	3	1	1	1	1	1	1000	7	Road vulnerability mapping shows single lane access to a priority 1 road. 
 37	supermarket	-41.29637075	174.7705786	Four Square Shalimar	"308 Willis St, Aro Valley, Wellington, 6011, NZL"	3	3	1	1	1	1	0	10	Close to a priority 1 road.
-38	supermarket	-41.20978254	174.9082628	Countdown Queensgate	"35 Bloomfield Ter, Hutt Central, Lower Hutt, 5010, NZL"	3	3	2	2	1	2	0	Oct-90	Close to a priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
+38	supermarket	-41.20978254	174.9082628	Countdown Queensgate	"35 Bloomfield Ter, Hutt Central, Lower Hutt, 5010, NZL"	3	3	2	2	1	2	0	10/90	Close to a priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
 39	supermarket	-41.32296859	174.831122	Four Square Seatoun Discount	"35 Falkirk Ave, Seatoun, Wellington, 6022, NZL"	3	3	3	1	1	3	0	14	Close to a priority 3 road. 
 40	supermarket	-41.18600076	174.9284851	Four Square Kelson	"35 Major Dr, Kelson, Lower Hutt, 5010, NZL"	3	3	3	3	1	1	600	90/90	
 41	supermarket	-41.16949071	174.8267628	New World Tawa	"37 Oxford St, Tawa, Wellington, 5028, NZL"	3	1	1	1	1	2	100	7	Adjacent to priority 2 road. 
@@ -44,7 +44,7 @@ dest_id	dest_type	lat	lon	label	address	1	2	3	4	5	nearest_priority_road	dist_to_
 43	supermarket	-40.75247032	175.1389769	Four Square Otaki	"42 Main St, Otaki, 5512, NZL"	3	1	1	1	1	2	0	7	Close to priority 2 road.
 44	supermarket	-41.22338835	174.871908	Countdown Petone	"45 Jackson St, Petone, Lower Hutt, 5012, NZL"	3	3	3	2	1	2	100	21/90	Close to priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
 45	supermarket	-41.31945678	174.7945201	Countdown Kilbirnie	"47 Bay Rd, Kilbirnie, Wellington, 6022, NZL"	3	3	1	1	1	1	200	14	Close to priority 2 road. Road vulnerability mapping indicates that road access from priority road to supermarket should be good. 
-46	supermarket	-41.20907785	174.9077917	New World Hutt City	"47 Waterloo Rd, Hutt Central, Lower Hutt, 5010, NZL"	3	3	2	2	1	2	100	Oct-90	Close to a priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
+46	supermarket	-41.20907785	174.9077917	New World Hutt City	"47 Waterloo Rd, Hutt Central, Lower Hutt, 5010, NZL"	3	3	2	2	1	2	100	10/90	Close to a priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
 47	supermarket	-41.31574314	174.8148171	New World Miramar	"48 Miramar Ave, Miramar, Wellington, 6022, NZL"	3	3	3	1	1	3	200	14	Close to a priority 3 road. 
 48	supermarket	-40.91925067	174.9814331	Four Square Raumati Village	"5 Margaret Rd, Raumati Beach, Paraparaumu, 5032, NZL"	3	1	1	1	1	3	0	7	Road vulnerability mapping shows single lane access to a priority 1 road. 
 49	supermarket	-40.87501384	175.0652452	New World Waikanae	"5 Parata St, Waikanae, 5036, NZL"	3	1	1	1	1	1	0	7	Close to a priority 1 road.
@@ -56,7 +56,7 @@ dest_id	dest_type	lat	lon	label	address	1	2	3	4	5	nearest_priority_road	dist_to_
 55	supermarket	-41.20270238	174.8086258	New World Churton Park	"69 Lakewood Ave, Churton Park, Wellington, 6037, NZL"	3	3	1	1	1	1	1000	7	"1km from a priority road, so assume that it will take additional time to recover access to the priority road."
 56	supermarket	-40.75313592	175.1406543	Countdown Otaki	"69 Mill Rd, Otaki, 5512, NZL"	3	1	1	1	1	2	0	7	Close to priority 2 road.
 57	supermarket	-41.30750934	174.7780027	Four Square Newtown	"7 Riddiford St, Newtown, Wellington, 6021, NZL"	3	3	1	1	1	1	0	14	Close to priority 1 road.
-58	supermarket	-41.20732835	174.9513171	Four Square Seddon Street	"70 Seddon St, Naenae, Lower Hutt, 5011, NZL"	3	3	3	2	1	3	500	Oct-90	"Road vulnerability mapping shows roads in the area are likely to be less impacted, so once access to the priority 3 road is achieved, access to the supermarket is likely to be relatively soon after. Hutt Valley access is weather dependent until 'day 90'."
+58	supermarket	-41.20732835	174.9513171	Four Square Seddon Street	"70 Seddon St, Naenae, Lower Hutt, 5011, NZL"	3	3	3	2	1	3	500	10/90	"Road vulnerability mapping shows roads in the area are likely to be less impacted, so once access to the priority 3 road is achieved, access to the supermarket is likely to be relatively soon after. Hutt Valley access is weather dependent until 'day 90'."
 59	supermarket	-41.28798687	174.7752842	New World Metro	"70 Willis St, Wellington Central, Wellington, 6011, NZL"	3	3	3	3	1	1	400	10	"Although close to a Priority 1 road, this supermarket is located within an area of multi-storey buildings. This lowers the likelihood of unimpeded access post-earthquake event."
 60	supermarket	-41.3182391	174.7965327	Pak'N Save Kilbirnie	"78 Rongotai Rd, Kilbirnie, Wellington, 6022, NZL"	3	3	1	1	1	1	100	14	Close to a priority 1 road.
 61	supermarket	-41.13435993	174.8418619	Countdown Porirua	"8 Lyttelton Ave, Porirua City Centre, Porirua, 5022, NZL"	3	1	1	1	1	1	200	7	Road vulnerability mapping indicates that access to the prioity 1 road should be good. 
@@ -64,7 +64,7 @@ dest_id	dest_type	lat	lon	label	address	1	2	3	4	5	nearest_priority_road	dist_to_
 63	supermarket	-41.28893455	174.761976	Four Square Kelburn	"97A Upland Rd, Kelburn, Wellington, 6012, NZL"	3	3	3	1	1	3	0	10	Close to priority 3 road.
 64	supermarket	-40.94819023	175.6664326	New World Masterton	"2 Dixon St, Masterton, 5810, NZL"	3	3	3	1	1	1	200	21	
 65	supermarket	-41.2239469	174.8739783	Pak'N Save Petone	"136 Jackson St, Petone, Lower Hutt, 5012, NZL"	3	3	3	2	1	2	100	21/90	Close to priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
-66	supermarket	-41.17463451	174.9811912	New World Stokes Valley	"14 Evans St, Stokes Valley, Lower Hutt, 5019, NZL"	3	3	2	2	1	2	0	Oct-90	Close to priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
+66	supermarket	-41.17463451	174.9811912	New World Stokes Valley	"14 Evans St, Stokes Valley, Lower Hutt, 5019, NZL"	3	3	2	2	1	2	0	10/90	Close to priority 2 road. Hutt Valley access is weather dependent until 'day 90'.
 67	supermarket	-40.9575811	175.6491921	Pak'N Save Masterton	"432 Queen St, Masterton, 5810, NZL"	3	3	3	1	1	1	100	21	
 68	supermarket	-40.92318801	174.9918185	Countdown Paraparaumu	"Kapiti Expy, Paraparaumu, 5032, NZL"	3	1	1	1	1	1	100	7	Close to priority 1 road.
 69	fuel_station	-40.76066796	175.1574728	BP Connect Otaki	250 Main Rd. Otaki	3	3	3	3	1				
@@ -117,14 +117,14 @@ dest_id	dest_type	lat	lon	label	address	1	2	3	4	5	nearest_priority_road	dist_to_
 116	fuel_station	-41.31508108	174.8138805	Z Miramar	"27 Miramar Ave, Miramar"	3	3	3	3	1				
 117	fuel_station	-41.315199	174.8143	New World Miramar Fuel	"29-35 Miramar Ave, Miramar"	3	3	3	3	1				
 118	fuel_station	-41.32544922	174.8101997	Z Broadway	"Cnr Calabar Rd and Broadway, Strathmore"	3	3	3	3	1				
-119	fuel_station	-41.12353986	175.0757681	BP Connect Upper Hutt	963-967 Fergusson Dr. Upper Hutt	3	3	2	1	1	1	0	Oct-90	"Priority fuel station. Fuel only available while stocks allow. No generator on-site, so fuel commences from when generator can be installed."
+119	fuel_station	-41.12353986	175.0757681	BP Connect Upper Hutt	963-967 Fergusson Dr. Upper Hutt	3	3	2	1	1	1	0	10/90	"Priority fuel station. Fuel only available while stocks allow. No generator on-site, so fuel commences from when generator can be installed."
 120	fuel_station	-41.10895736	175.0974192	Caltex Rimutuka 	"1193 Fergusson Dr, Upper Hutt."	3	3	3	3	1				
 121	fuel_station	-41.124709	175.039538	Challenge Moonshine	"73-75 Moonshine Rd, Upper Hutt"	3	3	3	3	1				
 122	fuel_station	-41.123168	175.066219	Pak n Save Upp Hutt Fuel	"3-19 Royal St, Upper Hutt"	3	3	3	3	1				
 123	fuel_station	-41.146677	175.010041	Mobil Silverstream 	"170 Fergusson Drive, Silverstream"	3	3	3	3	1				
 124	fuel_station	-41.137043	175.032575	Z Trentham	"430 Fergusson Dr, Upper Hutt"	3	3	3	3	1				
 125	fuel_station	-41.16142957	174.981588	Caltex Stokes Valley	7 Stokes Valley Rd. Stokes Valley	3	3	3	3	1				
-126	fuel_station	-41.17867848	174.9610193	BP 2go Taita	1217 High St. Taita	3	3	2	1	1	1	0	Oct-90	"Priority fuel station. Fuel only available while stocks allow. No generator on-site, so fuel commences from when generator can be installed."
+126	fuel_station	-41.17867848	174.9610193	BP 2go Taita	1217 High St. Taita	3	3	2	1	1	1	0	10/90	"Priority fuel station. Fuel only available while stocks allow. No generator on-site, so fuel commences from when generator can be installed."
 127	fuel_station	-41.22289794	174.9119541	BP Connect Waiwhetu	72-74 Whites Line Waiwhetu	3	3	3	3	1				
 128	fuel_station	-41.20452587	174.9115346	BP Connect Melling	17 Melling Rd. Lower Hutt	3	3	3	3	1				
 129	fuel_station	-41.2004513	174.9470857	Caltex Naenae	"Cnr Holland and Vogel St, Naenae"	3	3	3	3	1				
