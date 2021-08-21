@@ -1,4 +1,4 @@
-﻿dest_type,lat,lon,label,address,1,2,3,4,5,nearest_priority_road,dist_to_priority_road,suburb_resupply_day,comments
+﻿dest_type,y,x,label,address,0_7,8_14,15_30,31_90,90+,nearest_priority_road,dist_to_priority_road,suburb_resupply_day,comments
 supermarket,-41.30427856,174.7941162,Four Square Hataitai,"1 Moxham Ave, Hataitai, Wellington, 6021, NZL",3,3,1,1,1,1,200,10,Close to a priority 2 road. Road vulnerability mapping indicates that access via Constable St/Wellington Rd should be available by day 15. 
 supermarket,-41.11027207,175.082087,Four Square Totara Park,"1 Turon Cres, Totara Park, Upper Hutt, 5018, NZL",3,3,3,2,1,3,200,10/90,Close to a priority 3 road. Hutt Valley access is weather dependant until 'day 90'.
 supermarket,-41.2900718,174.8972291,Four Square Eastbourne,"10 Oroua St, Eastbourne, Lower Hutt, 5013, NZL",3,3,3,3,1,2,2000,90,
