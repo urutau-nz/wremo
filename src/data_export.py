@@ -164,8 +164,10 @@ for time in [0,1,2,3,4,5]:
         for service in df['dest_type'].unique():
             if service == 'water':
                 bins = [0,1,2,3,4,np.inf]#"0-1", "1-2", "2-3", "3-4", "4+", "Isolated"]
+                bin_name = ["0-1", "1-2", "2-3", "3-4", "4+"]
             else:
                 bins = [0,2,4,6,8,np.inf]
+                bin_name = ["0-2", "2-4", "4-6", "6-8", "8+"]
             df_sub = df[df['dest_type']==service]
             df_sub = df_sub[df_sub['time']==time]
             # create the hist
@@ -181,6 +183,7 @@ for time in [0,1,2,3,4,5]:
             df_new['group'] = group
             df_new['time'] = time
             df_new['colors'] = ['#79D151', '#22A784', '#29788E', '#404387', '#440154']
+            df_new['bins'] = bin_name
             hists.append(df_new)
             for region in regions:
                 df_sub = df[(df['dest_type']==service)&(df['Location']==region)]
@@ -193,6 +196,7 @@ for time in [0,1,2,3,4,5]:
                 df_new['group'] = group
                 df_new['time'] = time
                 df_new['colors'] = ['#79D151', '#22A784', '#29788E', '#404387', '#440154']
+                df_new['bins'] = bin_name
                 hists.append(df_new)
 
 # concat
