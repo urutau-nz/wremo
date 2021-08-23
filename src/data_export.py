@@ -137,22 +137,31 @@ db = main.init_db(config)
 import code
 code.interact(local=locals())
 
+# select all geoids
+sql = "SELECT DISTINCT(geoid), population FROM nearest_block WHERE population > 0"
+geoids = pd.read_sql(sql, con=db['con'])
+
 # # import data
-sql = "SELECT geoid, dest_type, distance, population, time, geometry  FROM nearest_block WHERE population > 0"
+sql = "SELECT geoid, dest_type, distance, time, geometry  FROM nearest_block WHERE population > 0"
 df = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
 zones = gpd.read_file('./data/raw/TransportZones.gdb', driver='FileGDB',layer='TransportZoneBoundaries')
 zones = zones[['Location','geometry']]
 zones = zones.to_crs(df.crs)
 df = gpd.sjoin(df, zones, how='inner', op='within')
+geoids = geoids.merge(df[['geoid','Location']], on='geoid', how='left')
+geoids.drop_duplicates(inplace=True)
 # join with census data
 df_census = pd.read_csv('./data/raw/Individual_part2_totalNZ-wide_format_updated_16-7-20.csv')
+df_census['Area_code'] = df_census['Area_code'].map(str)
+df_census = df_census[df_census['Area_code'].isin(geoids.geoid)]
 df_census['Census_2018_Difficulty_walking_02_Some_difficulty_CURP_5yrs_and_over'] = pd.to_numeric(df_census['Census_2018_Difficulty_walking_02_Some_difficulty_CURP_5yrs_and_over'].replace('C',0))
 df_census['Census_2018_Difficulty_walking_03_A_lot_of_difficulty_CURP_5yrs_and_over'] = pd.to_numeric(df_census['Census_2018_Difficulty_walking_03_A_lot_of_difficulty_CURP_5yrs_and_over'].replace('C',0))
 df_census['Census_2018_Difficulty_walking_04_Cannot_do_at_all_CURP_5yrs_and_over'] = pd.to_numeric(df_census['Census_2018_Difficulty_walking_04_Cannot_do_at_all_CURP_5yrs_and_over'].replace('C',0))
 df_census.eval("difficulty_walking = Census_2018_Difficulty_walking_02_Some_difficulty_CURP_5yrs_and_over + Census_2018_Difficulty_walking_03_A_lot_of_difficulty_CURP_5yrs_and_over + Census_2018_Difficulty_walking_04_Cannot_do_at_all_CURP_5yrs_and_over", inplace=True)
 df_census = df_census[['Area_code','difficulty_walking']]
-df_census['Area_code'] = df_census['Area_code'].map(str)
-df = df.merge(df_census, how='inner', left_on='geoid',right_on='Area_code')
+df_census = geoids.merge(df_census, how='right', left_on='geoid',right_on='Area_code')
+# df = df.merge(df_census, how='right', left_on='geoid',right_on='Area_code')
+# df = df.merge(df_census, how='left', on='geoid')
 # set bins
 # bins = 100#list(range(0,21))
 # create hist and cdf
@@ -164,38 +173,43 @@ for time in [0,1,2,3,4,5]:
         for service in df['dest_type'].unique():
             if service == 'water':
                 bins = [0,1,2,3,4,np.inf]#"0-1", "1-2", "2-3", "3-4", "4+", "Isolated"]
-                bin_name = ["0-1", "1-2", "2-3", "3-4", "4+"]
+                bin_name = ["0-1", "1-2", "2-3", "3-4", "4+","isolated"]
             else:
                 bins = [0,2,4,6,8,np.inf]
-                bin_name = ["0-2", "2-4", "4-6", "6-8", "8+"]
+                bin_name = ["0-2", "2-4", "4-6", "6-8", "8+","isolated"]
             df_sub = df[df['dest_type']==service]
             df_sub = df_sub[df_sub['time']==time]
+            df_sub = df_sub.merge(df_census, how='right', on='geoid')
             # create the hist
             # import code
             # code.interact(local=locals())
             hist, division = np.histogram(df_sub['distance']/1000, bins = bins, weights=df_sub[group], density=False)
+            num_isolated = df_sub[np.isnan(df_sub['distance'])][group].sum()
             # unity_density = density / density.sum()
             # unity_density = np.append(0, unity_density)
             # division = np.append(0, division)
-            df_new = pd.DataFrame({'count':hist, 'distance':division[:-1]})
+            df_new = pd.DataFrame({'count':list(hist)+[num_isolated], 'distance':list(division[:-1])+[np.nan]})
             df_new['region'] = 'All'
             df_new['service']=service
             df_new['group'] = group
             df_new['time'] = time
-            df_new['colors'] = ['#79D151', '#22A784', '#29788E', '#404387', '#440154']
+            df_new['colors'] = ['#79D151', '#22A784', '#29788E', '#404387', '#440154','black']
             df_new['bins'] = bin_name
             hists.append(df_new)
             for region in regions:
                 df_sub = df[(df['dest_type']==service)&(df['Location']==region)]
+                df_census_sub = df_census[df_census['Location']==region]
+                df_sub = df_sub.merge(df_census_sub, how='right', on='geoid')
                 # create the hist
                 hist, division = np.histogram(df_sub['distance']/1000, bins = bins, weights=df_sub[group], density=False)
+                num_isolated = df_sub[np.isnan(df_sub['distance'])][group].sum()
                 # division = np.append(0, division)
-                df_new = pd.DataFrame({'count':hist, 'distance':division[:-1]})
+                df_new = pd.DataFrame({'count':list(hist)+[num_isolated], 'distance':list(division[:-1])+[np.nan]})
                 df_new['service']=service
                 df_new['region'] = region
                 df_new['group'] = group
                 df_new['time'] = time
-                df_new['colors'] = ['#79D151', '#22A784', '#29788E', '#404387', '#440154']
+                df_new['colors'] = ['#79D151', '#22A784', '#29788E', '#404387', '#440154', 'black']
                 df_new['bins'] = bin_name
                 hists.append(df_new)
 
@@ -203,3 +217,4 @@ for time in [0,1,2,3,4,5]:
 df_hists = pd.concat(hists)
 # export
 df_hists.to_csv('./data/results/access_bars.csv')
+
