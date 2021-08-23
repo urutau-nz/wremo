@@ -4,7 +4,7 @@
 2,3546,4.0,All,EM_hubs,population,0,#29788E,4-6
 3,1605,6.0,All,EM_hubs,population,0,#404387,6-8
 4,708,8.0,All,EM_hubs,population,0,#440154,8+
-5,123459,,All,EM_hubs,population,0,black,isolated
+5,0,,All,EM_hubs,population,0,black,isolated
 0,137088,0.0,Kapiti Coast,EM_hubs,population,0,#79D151,0-2
 1,71208,2.0,Kapiti Coast,EM_hubs,population,0,#22A784,2-4
 2,18000,4.0,Kapiti Coast,EM_hubs,population,0,#29788E,4-6
@@ -142,7 +142,7 @@
 2,10098,4.0,All,supermarket,population,0,#29788E,4-6
 3,13002,6.0,All,supermarket,population,0,#404387,6-8
 4,13800,8.0,All,supermarket,population,0,#440154,8+
-5,123459,,All,supermarket,population,0,black,isolated
+5,0,,All,supermarket,population,0,black,isolated
 0,112347,0.0,Kapiti Coast,supermarket,population,0,#79D151,0-2
 1,63615,2.0,Kapiti Coast,supermarket,population,0,#22A784,2-4
 2,10764,4.0,Kapiti Coast,supermarket,population,0,#29788E,4-6
@@ -280,7 +280,7 @@
 2,12744,4.0,All,fuel_station,population,0,#29788E,4-6
 3,2769,6.0,All,fuel_station,population,0,#404387,6-8
 4,2097,8.0,All,fuel_station,population,0,#440154,8+
-5,123459,,All,fuel_station,population,0,black,isolated
+5,0,,All,fuel_station,population,0,black,isolated
 0,56733,0.0,Kapiti Coast,fuel_station,population,0,#79D151,0-2
 1,64917,2.0,Kapiti Coast,fuel_station,population,0,#22A784,2-4
 2,29313,4.0,Kapiti Coast,fuel_station,population,0,#29788E,4-6
@@ -418,7 +418,7 @@
 2,47376,4.0,All,health_services,population,0,#29788E,4-6
 3,14961,6.0,All,health_services,population,0,#404387,6-8
 4,28260,8.0,All,health_services,population,0,#440154,8+
-5,123459,,All,health_services,population,0,black,isolated
+5,0,,All,health_services,population,0,black,isolated
 0,106920,0.0,Kapiti Coast,health_services,population,0,#79D151,0-2
 1,83034,2.0,Kapiti Coast,health_services,population,0,#22A784,2-4
 2,30438,4.0,Kapiti Coast,health_services,population,0,#29788E,4-6
@@ -556,7 +556,7 @@
 2,2667,2.0,All,water,population,0,#29788E,2-3
 3,459,3.0,All,water,population,0,#404387,3-4
 4,45912,4.0,All,water,population,0,#440154,4+
-5,123459,,All,water,population,0,black,isolated
+5,0,,All,water,population,0,black,isolated
 0,0,0.0,Kapiti Coast,water,population,0,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,population,0,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,population,0,#29788E,2-3
@@ -694,7 +694,7 @@
 2,351,4.0,All,EM_hubs,difficulty_walking,0,#29788E,4-6
 3,180,6.0,All,EM_hubs,difficulty_walking,0,#404387,6-8
 4,93,8.0,All,EM_hubs,difficulty_walking,0,#440154,8+
-5,13848,,All,EM_hubs,difficulty_walking,0,black,isolated
+5,0,,All,EM_hubs,difficulty_walking,0,black,isolated
 0,23598,0.0,Kapiti Coast,EM_hubs,difficulty_walking,0,#79D151,0-2
 1,10674,2.0,Kapiti Coast,EM_hubs,difficulty_walking,0,#22A784,2-4
 2,1926,4.0,Kapiti Coast,EM_hubs,difficulty_walking,0,#29788E,4-6
@@ -832,7 +832,7 @@
 2,957,4.0,All,supermarket,difficulty_walking,0,#29788E,4-6
 3,1293,6.0,All,supermarket,difficulty_walking,0,#404387,6-8
 4,1590,8.0,All,supermarket,difficulty_walking,0,#440154,8+
-5,13848,,All,supermarket,difficulty_walking,0,black,isolated
+5,0,,All,supermarket,difficulty_walking,0,black,isolated
 0,19032,0.0,Kapiti Coast,supermarket,difficulty_walking,0,#79D151,0-2
 1,9705,2.0,Kapiti Coast,supermarket,difficulty_walking,0,#22A784,2-4
 2,1299,4.0,Kapiti Coast,supermarket,difficulty_walking,0,#29788E,4-6
@@ -970,7 +970,7 @@
 2,1212,4.0,All,fuel_station,difficulty_walking,0,#29788E,4-6
 3,231,6.0,All,fuel_station,difficulty_walking,0,#404387,6-8
 4,231,8.0,All,fuel_station,difficulty_walking,0,#440154,8+
-5,13848,,All,fuel_station,difficulty_walking,0,black,isolated
+5,0,,All,fuel_station,difficulty_walking,0,black,isolated
 0,10851,0.0,Kapiti Coast,fuel_station,difficulty_walking,0,#79D151,0-2
 1,9576,2.0,Kapiti Coast,fuel_station,difficulty_walking,0,#22A784,2-4
 2,3207,4.0,Kapiti Coast,fuel_station,difficulty_walking,0,#29788E,4-6
@@ -1108,7 +1108,7 @@
 2,4791,4.0,All,health_services,difficulty_walking,0,#29788E,4-6
 3,1572,6.0,All,health_services,difficulty_walking,0,#404387,6-8
 4,3414,8.0,All,health_services,difficulty_walking,0,#440154,8+
-5,13848,,All,health_services,difficulty_walking,0,black,isolated
+5,0,,All,health_services,difficulty_walking,0,black,isolated
 0,20196,0.0,Kapiti Coast,health_services,difficulty_walking,0,#79D151,0-2
 1,12384,2.0,Kapiti Coast,health_services,difficulty_walking,0,#22A784,2-4
 2,3096,4.0,Kapiti Coast,health_services,difficulty_walking,0,#29788E,4-6
@@ -1246,7 +1246,7 @@
 2,192,2.0,All,water,difficulty_walking,0,#29788E,2-3
 3,42,3.0,All,water,difficulty_walking,0,#404387,3-4
 4,7158,4.0,All,water,difficulty_walking,0,#440154,4+
-5,13848,,All,water,difficulty_walking,0,black,isolated
+5,0,,All,water,difficulty_walking,0,black,isolated
 0,0,0.0,Kapiti Coast,water,difficulty_walking,0,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,difficulty_walking,0,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,difficulty_walking,0,#29788E,2-3
@@ -1384,7 +1384,7 @@
 2,3546,4.0,All,EM_hubs,population,1,#29788E,4-6
 3,1605,6.0,All,EM_hubs,population,1,#404387,6-8
 4,708,8.0,All,EM_hubs,population,1,#440154,8+
-5,123459,,All,EM_hubs,population,1,black,isolated
+5,0,,All,EM_hubs,population,1,black,isolated
 0,137088,0.0,Kapiti Coast,EM_hubs,population,1,#79D151,0-2
 1,71208,2.0,Kapiti Coast,EM_hubs,population,1,#22A784,2-4
 2,18000,4.0,Kapiti Coast,EM_hubs,population,1,#29788E,4-6
@@ -1522,7 +1522,7 @@
 2,0,4.0,All,supermarket,population,1,#29788E,4-6
 3,0,6.0,All,supermarket,population,1,#404387,6-8
 4,0,8.0,All,supermarket,population,1,#440154,8+
-5,507531,,All,supermarket,population,1,black,isolated
+5,384072,,All,supermarket,population,1,black,isolated
 0,112347,0.0,Kapiti Coast,supermarket,population,1,#79D151,0-2
 1,63615,2.0,Kapiti Coast,supermarket,population,1,#22A784,2-4
 2,10764,4.0,Kapiti Coast,supermarket,population,1,#29788E,4-6
@@ -1660,7 +1660,7 @@
 2,61608,4.0,All,fuel_station,population,1,#29788E,4-6
 3,32034,6.0,All,fuel_station,population,1,#404387,6-8
 4,181728,8.0,All,fuel_station,population,1,#440154,8+
-5,123459,,All,fuel_station,population,1,black,isolated
+5,0,,All,fuel_station,population,1,black,isolated
 0,56733,0.0,Kapiti Coast,fuel_station,population,1,#79D151,0-2
 1,64917,2.0,Kapiti Coast,fuel_station,population,1,#22A784,2-4
 2,29313,4.0,Kapiti Coast,fuel_station,population,1,#29788E,4-6
@@ -1798,7 +1798,7 @@
 2,47376,4.0,All,health_services,population,1,#29788E,4-6
 3,14961,6.0,All,health_services,population,1,#404387,6-8
 4,28260,8.0,All,health_services,population,1,#440154,8+
-5,123459,,All,health_services,population,1,black,isolated
+5,0,,All,health_services,population,1,black,isolated
 0,106920,0.0,Kapiti Coast,health_services,population,1,#79D151,0-2
 1,83034,2.0,Kapiti Coast,health_services,population,1,#22A784,2-4
 2,30438,4.0,Kapiti Coast,health_services,population,1,#29788E,4-6
@@ -1936,7 +1936,7 @@
 2,0,2.0,All,water,population,1,#29788E,2-3
 3,0,3.0,All,water,population,1,#404387,3-4
 4,0,4.0,All,water,population,1,#440154,4+
-5,507531,,All,water,population,1,black,isolated
+5,384072,,All,water,population,1,black,isolated
 0,0,0.0,Kapiti Coast,water,population,1,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,population,1,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,population,1,#29788E,2-3
@@ -2074,7 +2074,7 @@
 2,351,4.0,All,EM_hubs,difficulty_walking,1,#29788E,4-6
 3,180,6.0,All,EM_hubs,difficulty_walking,1,#404387,6-8
 4,93,8.0,All,EM_hubs,difficulty_walking,1,#440154,8+
-5,13848,,All,EM_hubs,difficulty_walking,1,black,isolated
+5,0,,All,EM_hubs,difficulty_walking,1,black,isolated
 0,23598,0.0,Kapiti Coast,EM_hubs,difficulty_walking,1,#79D151,0-2
 1,10674,2.0,Kapiti Coast,EM_hubs,difficulty_walking,1,#22A784,2-4
 2,1926,4.0,Kapiti Coast,EM_hubs,difficulty_walking,1,#29788E,4-6
@@ -2212,7 +2212,7 @@
 2,0,4.0,All,supermarket,difficulty_walking,1,#29788E,4-6
 3,0,6.0,All,supermarket,difficulty_walking,1,#404387,6-8
 4,0,8.0,All,supermarket,difficulty_walking,1,#440154,8+
-5,54150,,All,supermarket,difficulty_walking,1,black,isolated
+5,40302,,All,supermarket,difficulty_walking,1,black,isolated
 0,19032,0.0,Kapiti Coast,supermarket,difficulty_walking,1,#79D151,0-2
 1,9705,2.0,Kapiti Coast,supermarket,difficulty_walking,1,#22A784,2-4
 2,1299,4.0,Kapiti Coast,supermarket,difficulty_walking,1,#29788E,4-6
@@ -2350,7 +2350,7 @@
 2,5700,4.0,All,fuel_station,difficulty_walking,1,#29788E,4-6
 3,2778,6.0,All,fuel_station,difficulty_walking,1,#404387,6-8
 4,23010,8.0,All,fuel_station,difficulty_walking,1,#440154,8+
-5,13848,,All,fuel_station,difficulty_walking,1,black,isolated
+5,0,,All,fuel_station,difficulty_walking,1,black,isolated
 0,10851,0.0,Kapiti Coast,fuel_station,difficulty_walking,1,#79D151,0-2
 1,9576,2.0,Kapiti Coast,fuel_station,difficulty_walking,1,#22A784,2-4
 2,3207,4.0,Kapiti Coast,fuel_station,difficulty_walking,1,#29788E,4-6
@@ -2488,7 +2488,7 @@
 2,4791,4.0,All,health_services,difficulty_walking,1,#29788E,4-6
 3,1572,6.0,All,health_services,difficulty_walking,1,#404387,6-8
 4,3414,8.0,All,health_services,difficulty_walking,1,#440154,8+
-5,13848,,All,health_services,difficulty_walking,1,black,isolated
+5,0,,All,health_services,difficulty_walking,1,black,isolated
 0,20196,0.0,Kapiti Coast,health_services,difficulty_walking,1,#79D151,0-2
 1,12384,2.0,Kapiti Coast,health_services,difficulty_walking,1,#22A784,2-4
 2,3096,4.0,Kapiti Coast,health_services,difficulty_walking,1,#29788E,4-6
@@ -2626,7 +2626,7 @@
 2,0,2.0,All,water,difficulty_walking,1,#29788E,2-3
 3,0,3.0,All,water,difficulty_walking,1,#404387,3-4
 4,0,4.0,All,water,difficulty_walking,1,#440154,4+
-5,54150,,All,water,difficulty_walking,1,black,isolated
+5,40302,,All,water,difficulty_walking,1,black,isolated
 0,0,0.0,Kapiti Coast,water,difficulty_walking,1,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,difficulty_walking,1,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,difficulty_walking,1,#29788E,2-3
@@ -2764,7 +2764,7 @@
 2,3546,4.0,All,EM_hubs,population,2,#29788E,4-6
 3,1605,6.0,All,EM_hubs,population,2,#404387,6-8
 4,708,8.0,All,EM_hubs,population,2,#440154,8+
-5,123459,,All,EM_hubs,population,2,black,isolated
+5,0,,All,EM_hubs,population,2,black,isolated
 0,137088,0.0,Kapiti Coast,EM_hubs,population,2,#79D151,0-2
 1,71208,2.0,Kapiti Coast,EM_hubs,population,2,#22A784,2-4
 2,18000,4.0,Kapiti Coast,EM_hubs,population,2,#29788E,4-6
@@ -2902,7 +2902,7 @@
 2,51558,4.0,All,supermarket,population,2,#29788E,4-6
 3,54156,6.0,All,supermarket,population,2,#404387,6-8
 4,95178,8.0,All,supermarket,population,2,#440154,8+
-5,123459,,All,supermarket,population,2,black,isolated
+5,0,,All,supermarket,population,2,black,isolated
 0,112347,0.0,Kapiti Coast,supermarket,population,2,#79D151,0-2
 1,63615,2.0,Kapiti Coast,supermarket,population,2,#22A784,2-4
 2,10764,4.0,Kapiti Coast,supermarket,population,2,#29788E,4-6
@@ -3040,7 +3040,7 @@
 2,42222,4.0,All,fuel_station,population,2,#29788E,4-6
 3,21507,6.0,All,fuel_station,population,2,#404387,6-8
 4,147975,8.0,All,fuel_station,population,2,#440154,8+
-5,123459,,All,fuel_station,population,2,black,isolated
+5,0,,All,fuel_station,population,2,black,isolated
 0,56733,0.0,Kapiti Coast,fuel_station,population,2,#79D151,0-2
 1,64917,2.0,Kapiti Coast,fuel_station,population,2,#22A784,2-4
 2,29313,4.0,Kapiti Coast,fuel_station,population,2,#29788E,4-6
@@ -3178,7 +3178,7 @@
 2,47376,4.0,All,health_services,population,2,#29788E,4-6
 3,14961,6.0,All,health_services,population,2,#404387,6-8
 4,28260,8.0,All,health_services,population,2,#440154,8+
-5,123459,,All,health_services,population,2,black,isolated
+5,0,,All,health_services,population,2,black,isolated
 0,106920,0.0,Kapiti Coast,health_services,population,2,#79D151,0-2
 1,83034,2.0,Kapiti Coast,health_services,population,2,#22A784,2-4
 2,30438,4.0,Kapiti Coast,health_services,population,2,#29788E,4-6
@@ -3316,7 +3316,7 @@
 2,2667,2.0,All,water,population,2,#29788E,2-3
 3,459,3.0,All,water,population,2,#404387,3-4
 4,45912,4.0,All,water,population,2,#440154,4+
-5,123459,,All,water,population,2,black,isolated
+5,0,,All,water,population,2,black,isolated
 0,0,0.0,Kapiti Coast,water,population,2,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,population,2,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,population,2,#29788E,2-3
@@ -3454,7 +3454,7 @@
 2,351,4.0,All,EM_hubs,difficulty_walking,2,#29788E,4-6
 3,180,6.0,All,EM_hubs,difficulty_walking,2,#404387,6-8
 4,93,8.0,All,EM_hubs,difficulty_walking,2,#440154,8+
-5,13848,,All,EM_hubs,difficulty_walking,2,black,isolated
+5,0,,All,EM_hubs,difficulty_walking,2,black,isolated
 0,23598,0.0,Kapiti Coast,EM_hubs,difficulty_walking,2,#79D151,0-2
 1,10674,2.0,Kapiti Coast,EM_hubs,difficulty_walking,2,#22A784,2-4
 2,1926,4.0,Kapiti Coast,EM_hubs,difficulty_walking,2,#29788E,4-6
@@ -3592,7 +3592,7 @@
 2,5127,4.0,All,supermarket,difficulty_walking,2,#29788E,4-6
 3,4251,6.0,All,supermarket,difficulty_walking,2,#404387,6-8
 4,8940,8.0,All,supermarket,difficulty_walking,2,#440154,8+
-5,13848,,All,supermarket,difficulty_walking,2,black,isolated
+5,0,,All,supermarket,difficulty_walking,2,black,isolated
 0,19032,0.0,Kapiti Coast,supermarket,difficulty_walking,2,#79D151,0-2
 1,9705,2.0,Kapiti Coast,supermarket,difficulty_walking,2,#22A784,2-4
 2,1299,4.0,Kapiti Coast,supermarket,difficulty_walking,2,#29788E,4-6
@@ -3730,7 +3730,7 @@
 2,4287,4.0,All,fuel_station,difficulty_walking,2,#29788E,4-6
 3,2262,6.0,All,fuel_station,difficulty_walking,2,#404387,6-8
 4,18093,8.0,All,fuel_station,difficulty_walking,2,#440154,8+
-5,13848,,All,fuel_station,difficulty_walking,2,black,isolated
+5,0,,All,fuel_station,difficulty_walking,2,black,isolated
 0,10851,0.0,Kapiti Coast,fuel_station,difficulty_walking,2,#79D151,0-2
 1,9576,2.0,Kapiti Coast,fuel_station,difficulty_walking,2,#22A784,2-4
 2,3207,4.0,Kapiti Coast,fuel_station,difficulty_walking,2,#29788E,4-6
@@ -3868,7 +3868,7 @@
 2,4791,4.0,All,health_services,difficulty_walking,2,#29788E,4-6
 3,1572,6.0,All,health_services,difficulty_walking,2,#404387,6-8
 4,3414,8.0,All,health_services,difficulty_walking,2,#440154,8+
-5,13848,,All,health_services,difficulty_walking,2,black,isolated
+5,0,,All,health_services,difficulty_walking,2,black,isolated
 0,20196,0.0,Kapiti Coast,health_services,difficulty_walking,2,#79D151,0-2
 1,12384,2.0,Kapiti Coast,health_services,difficulty_walking,2,#22A784,2-4
 2,3096,4.0,Kapiti Coast,health_services,difficulty_walking,2,#29788E,4-6
@@ -4006,7 +4006,7 @@
 2,192,2.0,All,water,difficulty_walking,2,#29788E,2-3
 3,42,3.0,All,water,difficulty_walking,2,#404387,3-4
 4,7158,4.0,All,water,difficulty_walking,2,#440154,4+
-5,13848,,All,water,difficulty_walking,2,black,isolated
+5,0,,All,water,difficulty_walking,2,black,isolated
 0,0,0.0,Kapiti Coast,water,difficulty_walking,2,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,difficulty_walking,2,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,difficulty_walking,2,#29788E,2-3
@@ -4144,7 +4144,7 @@
 2,3546,4.0,All,EM_hubs,population,3,#29788E,4-6
 3,1605,6.0,All,EM_hubs,population,3,#404387,6-8
 4,708,8.0,All,EM_hubs,population,3,#440154,8+
-5,123459,,All,EM_hubs,population,3,black,isolated
+5,0,,All,EM_hubs,population,3,black,isolated
 0,137088,0.0,Kapiti Coast,EM_hubs,population,3,#79D151,0-2
 1,71208,2.0,Kapiti Coast,EM_hubs,population,3,#22A784,2-4
 2,18000,4.0,Kapiti Coast,EM_hubs,population,3,#29788E,4-6
@@ -4282,7 +4282,7 @@
 2,17679,4.0,All,supermarket,population,3,#29788E,4-6
 3,13662,6.0,All,supermarket,population,3,#404387,6-8
 4,14910,8.0,All,supermarket,population,3,#440154,8+
-5,123459,,All,supermarket,population,3,black,isolated
+5,0,,All,supermarket,population,3,black,isolated
 0,112347,0.0,Kapiti Coast,supermarket,population,3,#79D151,0-2
 1,63615,2.0,Kapiti Coast,supermarket,population,3,#22A784,2-4
 2,10764,4.0,Kapiti Coast,supermarket,population,3,#29788E,4-6
@@ -4420,7 +4420,7 @@
 2,78396,4.0,All,fuel_station,population,3,#29788E,4-6
 3,20892,6.0,All,fuel_station,population,3,#404387,6-8
 4,43314,8.0,All,fuel_station,population,3,#440154,8+
-5,123459,,All,fuel_station,population,3,black,isolated
+5,0,,All,fuel_station,population,3,black,isolated
 0,56733,0.0,Kapiti Coast,fuel_station,population,3,#79D151,0-2
 1,64917,2.0,Kapiti Coast,fuel_station,population,3,#22A784,2-4
 2,29313,4.0,Kapiti Coast,fuel_station,population,3,#29788E,4-6
@@ -4558,7 +4558,7 @@
 2,47376,4.0,All,health_services,population,3,#29788E,4-6
 3,14961,6.0,All,health_services,population,3,#404387,6-8
 4,28260,8.0,All,health_services,population,3,#440154,8+
-5,123459,,All,health_services,population,3,black,isolated
+5,0,,All,health_services,population,3,black,isolated
 0,106920,0.0,Kapiti Coast,health_services,population,3,#79D151,0-2
 1,83034,2.0,Kapiti Coast,health_services,population,3,#22A784,2-4
 2,30438,4.0,Kapiti Coast,health_services,population,3,#29788E,4-6
@@ -4696,7 +4696,7 @@
 2,2667,2.0,All,water,population,3,#29788E,2-3
 3,459,3.0,All,water,population,3,#404387,3-4
 4,45912,4.0,All,water,population,3,#440154,4+
-5,123459,,All,water,population,3,black,isolated
+5,0,,All,water,population,3,black,isolated
 0,0,0.0,Kapiti Coast,water,population,3,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,population,3,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,population,3,#29788E,2-3
@@ -4834,7 +4834,7 @@
 2,351,4.0,All,EM_hubs,difficulty_walking,3,#29788E,4-6
 3,180,6.0,All,EM_hubs,difficulty_walking,3,#404387,6-8
 4,93,8.0,All,EM_hubs,difficulty_walking,3,#440154,8+
-5,13848,,All,EM_hubs,difficulty_walking,3,black,isolated
+5,0,,All,EM_hubs,difficulty_walking,3,black,isolated
 0,23598,0.0,Kapiti Coast,EM_hubs,difficulty_walking,3,#79D151,0-2
 1,10674,2.0,Kapiti Coast,EM_hubs,difficulty_walking,3,#22A784,2-4
 2,1926,4.0,Kapiti Coast,EM_hubs,difficulty_walking,3,#29788E,4-6
@@ -4972,7 +4972,7 @@
 2,1614,4.0,All,supermarket,difficulty_walking,3,#29788E,4-6
 3,1332,6.0,All,supermarket,difficulty_walking,3,#404387,6-8
 4,1662,8.0,All,supermarket,difficulty_walking,3,#440154,8+
-5,13848,,All,supermarket,difficulty_walking,3,black,isolated
+5,0,,All,supermarket,difficulty_walking,3,black,isolated
 0,19032,0.0,Kapiti Coast,supermarket,difficulty_walking,3,#79D151,0-2
 1,9705,2.0,Kapiti Coast,supermarket,difficulty_walking,3,#22A784,2-4
 2,1299,4.0,Kapiti Coast,supermarket,difficulty_walking,3,#29788E,4-6
@@ -5110,7 +5110,7 @@
 2,8286,4.0,All,fuel_station,difficulty_walking,3,#29788E,4-6
 3,2193,6.0,All,fuel_station,difficulty_walking,3,#404387,6-8
 4,5469,8.0,All,fuel_station,difficulty_walking,3,#440154,8+
-5,13848,,All,fuel_station,difficulty_walking,3,black,isolated
+5,0,,All,fuel_station,difficulty_walking,3,black,isolated
 0,10851,0.0,Kapiti Coast,fuel_station,difficulty_walking,3,#79D151,0-2
 1,9576,2.0,Kapiti Coast,fuel_station,difficulty_walking,3,#22A784,2-4
 2,3207,4.0,Kapiti Coast,fuel_station,difficulty_walking,3,#29788E,4-6
@@ -5248,7 +5248,7 @@
 2,4791,4.0,All,health_services,difficulty_walking,3,#29788E,4-6
 3,1572,6.0,All,health_services,difficulty_walking,3,#404387,6-8
 4,3414,8.0,All,health_services,difficulty_walking,3,#440154,8+
-5,13848,,All,health_services,difficulty_walking,3,black,isolated
+5,0,,All,health_services,difficulty_walking,3,black,isolated
 0,20196,0.0,Kapiti Coast,health_services,difficulty_walking,3,#79D151,0-2
 1,12384,2.0,Kapiti Coast,health_services,difficulty_walking,3,#22A784,2-4
 2,3096,4.0,Kapiti Coast,health_services,difficulty_walking,3,#29788E,4-6
@@ -5386,7 +5386,7 @@
 2,192,2.0,All,water,difficulty_walking,3,#29788E,2-3
 3,42,3.0,All,water,difficulty_walking,3,#404387,3-4
 4,7158,4.0,All,water,difficulty_walking,3,#440154,4+
-5,13848,,All,water,difficulty_walking,3,black,isolated
+5,0,,All,water,difficulty_walking,3,black,isolated
 0,0,0.0,Kapiti Coast,water,difficulty_walking,3,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,difficulty_walking,3,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,difficulty_walking,3,#29788E,2-3
@@ -5524,7 +5524,7 @@
 2,3546,4.0,All,EM_hubs,population,4,#29788E,4-6
 3,1605,6.0,All,EM_hubs,population,4,#404387,6-8
 4,708,8.0,All,EM_hubs,population,4,#440154,8+
-5,123459,,All,EM_hubs,population,4,black,isolated
+5,0,,All,EM_hubs,population,4,black,isolated
 0,137088,0.0,Kapiti Coast,EM_hubs,population,4,#79D151,0-2
 1,71208,2.0,Kapiti Coast,EM_hubs,population,4,#22A784,2-4
 2,18000,4.0,Kapiti Coast,EM_hubs,population,4,#29788E,4-6
@@ -5662,7 +5662,7 @@
 2,11271,4.0,All,supermarket,population,4,#29788E,4-6
 3,13464,6.0,All,supermarket,population,4,#404387,6-8
 4,14910,8.0,All,supermarket,population,4,#440154,8+
-5,123459,,All,supermarket,population,4,black,isolated
+5,0,,All,supermarket,population,4,black,isolated
 0,112347,0.0,Kapiti Coast,supermarket,population,4,#79D151,0-2
 1,63615,2.0,Kapiti Coast,supermarket,population,4,#22A784,2-4
 2,10764,4.0,Kapiti Coast,supermarket,population,4,#29788E,4-6
@@ -5800,7 +5800,7 @@
 2,78396,4.0,All,fuel_station,population,4,#29788E,4-6
 3,20892,6.0,All,fuel_station,population,4,#404387,6-8
 4,43314,8.0,All,fuel_station,population,4,#440154,8+
-5,123459,,All,fuel_station,population,4,black,isolated
+5,0,,All,fuel_station,population,4,black,isolated
 0,56733,0.0,Kapiti Coast,fuel_station,population,4,#79D151,0-2
 1,64917,2.0,Kapiti Coast,fuel_station,population,4,#22A784,2-4
 2,29313,4.0,Kapiti Coast,fuel_station,population,4,#29788E,4-6
@@ -5938,7 +5938,7 @@
 2,47376,4.0,All,health_services,population,4,#29788E,4-6
 3,14961,6.0,All,health_services,population,4,#404387,6-8
 4,28260,8.0,All,health_services,population,4,#440154,8+
-5,123459,,All,health_services,population,4,black,isolated
+5,0,,All,health_services,population,4,black,isolated
 0,106920,0.0,Kapiti Coast,health_services,population,4,#79D151,0-2
 1,83034,2.0,Kapiti Coast,health_services,population,4,#22A784,2-4
 2,30438,4.0,Kapiti Coast,health_services,population,4,#29788E,4-6
@@ -6076,7 +6076,7 @@
 2,2667,2.0,All,water,population,4,#29788E,2-3
 3,459,3.0,All,water,population,4,#404387,3-4
 4,45912,4.0,All,water,population,4,#440154,4+
-5,123459,,All,water,population,4,black,isolated
+5,0,,All,water,population,4,black,isolated
 0,0,0.0,Kapiti Coast,water,population,4,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,population,4,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,population,4,#29788E,2-3
@@ -6214,7 +6214,7 @@
 2,351,4.0,All,EM_hubs,difficulty_walking,4,#29788E,4-6
 3,180,6.0,All,EM_hubs,difficulty_walking,4,#404387,6-8
 4,93,8.0,All,EM_hubs,difficulty_walking,4,#440154,8+
-5,13848,,All,EM_hubs,difficulty_walking,4,black,isolated
+5,0,,All,EM_hubs,difficulty_walking,4,black,isolated
 0,23598,0.0,Kapiti Coast,EM_hubs,difficulty_walking,4,#79D151,0-2
 1,10674,2.0,Kapiti Coast,EM_hubs,difficulty_walking,4,#22A784,2-4
 2,1926,4.0,Kapiti Coast,EM_hubs,difficulty_walking,4,#29788E,4-6
@@ -6352,7 +6352,7 @@
 2,1053,4.0,All,supermarket,difficulty_walking,4,#29788E,4-6
 3,1326,6.0,All,supermarket,difficulty_walking,4,#404387,6-8
 4,1662,8.0,All,supermarket,difficulty_walking,4,#440154,8+
-5,13848,,All,supermarket,difficulty_walking,4,black,isolated
+5,0,,All,supermarket,difficulty_walking,4,black,isolated
 0,19032,0.0,Kapiti Coast,supermarket,difficulty_walking,4,#79D151,0-2
 1,9705,2.0,Kapiti Coast,supermarket,difficulty_walking,4,#22A784,2-4
 2,1299,4.0,Kapiti Coast,supermarket,difficulty_walking,4,#29788E,4-6
@@ -6490,7 +6490,7 @@
 2,8286,4.0,All,fuel_station,difficulty_walking,4,#29788E,4-6
 3,2193,6.0,All,fuel_station,difficulty_walking,4,#404387,6-8
 4,5469,8.0,All,fuel_station,difficulty_walking,4,#440154,8+
-5,13848,,All,fuel_station,difficulty_walking,4,black,isolated
+5,0,,All,fuel_station,difficulty_walking,4,black,isolated
 0,10851,0.0,Kapiti Coast,fuel_station,difficulty_walking,4,#79D151,0-2
 1,9576,2.0,Kapiti Coast,fuel_station,difficulty_walking,4,#22A784,2-4
 2,3207,4.0,Kapiti Coast,fuel_station,difficulty_walking,4,#29788E,4-6
@@ -6628,7 +6628,7 @@
 2,4791,4.0,All,health_services,difficulty_walking,4,#29788E,4-6
 3,1572,6.0,All,health_services,difficulty_walking,4,#404387,6-8
 4,3414,8.0,All,health_services,difficulty_walking,4,#440154,8+
-5,13848,,All,health_services,difficulty_walking,4,black,isolated
+5,0,,All,health_services,difficulty_walking,4,black,isolated
 0,20196,0.0,Kapiti Coast,health_services,difficulty_walking,4,#79D151,0-2
 1,12384,2.0,Kapiti Coast,health_services,difficulty_walking,4,#22A784,2-4
 2,3096,4.0,Kapiti Coast,health_services,difficulty_walking,4,#29788E,4-6
@@ -6766,7 +6766,7 @@
 2,192,2.0,All,water,difficulty_walking,4,#29788E,2-3
 3,42,3.0,All,water,difficulty_walking,4,#404387,3-4
 4,7158,4.0,All,water,difficulty_walking,4,#440154,4+
-5,13848,,All,water,difficulty_walking,4,black,isolated
+5,0,,All,water,difficulty_walking,4,black,isolated
 0,0,0.0,Kapiti Coast,water,difficulty_walking,4,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,difficulty_walking,4,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,difficulty_walking,4,#29788E,2-3
@@ -6904,7 +6904,7 @@
 2,3546,4.0,All,EM_hubs,population,5,#29788E,4-6
 3,1605,6.0,All,EM_hubs,population,5,#404387,6-8
 4,708,8.0,All,EM_hubs,population,5,#440154,8+
-5,123459,,All,EM_hubs,population,5,black,isolated
+5,0,,All,EM_hubs,population,5,black,isolated
 0,137088,0.0,Kapiti Coast,EM_hubs,population,5,#79D151,0-2
 1,71208,2.0,Kapiti Coast,EM_hubs,population,5,#22A784,2-4
 2,18000,4.0,Kapiti Coast,EM_hubs,population,5,#29788E,4-6
@@ -7042,7 +7042,7 @@
 2,10098,4.0,All,supermarket,population,5,#29788E,4-6
 3,13002,6.0,All,supermarket,population,5,#404387,6-8
 4,13800,8.0,All,supermarket,population,5,#440154,8+
-5,123459,,All,supermarket,population,5,black,isolated
+5,0,,All,supermarket,population,5,black,isolated
 0,112347,0.0,Kapiti Coast,supermarket,population,5,#79D151,0-2
 1,63615,2.0,Kapiti Coast,supermarket,population,5,#22A784,2-4
 2,10764,4.0,Kapiti Coast,supermarket,population,5,#29788E,4-6
@@ -7180,7 +7180,7 @@
 2,12744,4.0,All,fuel_station,population,5,#29788E,4-6
 3,2769,6.0,All,fuel_station,population,5,#404387,6-8
 4,2097,8.0,All,fuel_station,population,5,#440154,8+
-5,123459,,All,fuel_station,population,5,black,isolated
+5,0,,All,fuel_station,population,5,black,isolated
 0,56733,0.0,Kapiti Coast,fuel_station,population,5,#79D151,0-2
 1,64917,2.0,Kapiti Coast,fuel_station,population,5,#22A784,2-4
 2,29313,4.0,Kapiti Coast,fuel_station,population,5,#29788E,4-6
@@ -7318,7 +7318,7 @@
 2,47376,4.0,All,health_services,population,5,#29788E,4-6
 3,14961,6.0,All,health_services,population,5,#404387,6-8
 4,28260,8.0,All,health_services,population,5,#440154,8+
-5,123459,,All,health_services,population,5,black,isolated
+5,0,,All,health_services,population,5,black,isolated
 0,106920,0.0,Kapiti Coast,health_services,population,5,#79D151,0-2
 1,83034,2.0,Kapiti Coast,health_services,population,5,#22A784,2-4
 2,30438,4.0,Kapiti Coast,health_services,population,5,#29788E,4-6
@@ -7456,7 +7456,7 @@
 2,2667,2.0,All,water,population,5,#29788E,2-3
 3,459,3.0,All,water,population,5,#404387,3-4
 4,45912,4.0,All,water,population,5,#440154,4+
-5,123459,,All,water,population,5,black,isolated
+5,0,,All,water,population,5,black,isolated
 0,0,0.0,Kapiti Coast,water,population,5,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,population,5,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,population,5,#29788E,2-3
@@ -7594,7 +7594,7 @@
 2,351,4.0,All,EM_hubs,difficulty_walking,5,#29788E,4-6
 3,180,6.0,All,EM_hubs,difficulty_walking,5,#404387,6-8
 4,93,8.0,All,EM_hubs,difficulty_walking,5,#440154,8+
-5,13848,,All,EM_hubs,difficulty_walking,5,black,isolated
+5,0,,All,EM_hubs,difficulty_walking,5,black,isolated
 0,23598,0.0,Kapiti Coast,EM_hubs,difficulty_walking,5,#79D151,0-2
 1,10674,2.0,Kapiti Coast,EM_hubs,difficulty_walking,5,#22A784,2-4
 2,1926,4.0,Kapiti Coast,EM_hubs,difficulty_walking,5,#29788E,4-6
@@ -7732,7 +7732,7 @@
 2,957,4.0,All,supermarket,difficulty_walking,5,#29788E,4-6
 3,1293,6.0,All,supermarket,difficulty_walking,5,#404387,6-8
 4,1590,8.0,All,supermarket,difficulty_walking,5,#440154,8+
-5,13848,,All,supermarket,difficulty_walking,5,black,isolated
+5,0,,All,supermarket,difficulty_walking,5,black,isolated
 0,19032,0.0,Kapiti Coast,supermarket,difficulty_walking,5,#79D151,0-2
 1,9705,2.0,Kapiti Coast,supermarket,difficulty_walking,5,#22A784,2-4
 2,1299,4.0,Kapiti Coast,supermarket,difficulty_walking,5,#29788E,4-6
@@ -7870,7 +7870,7 @@
 2,1212,4.0,All,fuel_station,difficulty_walking,5,#29788E,4-6
 3,231,6.0,All,fuel_station,difficulty_walking,5,#404387,6-8
 4,231,8.0,All,fuel_station,difficulty_walking,5,#440154,8+
-5,13848,,All,fuel_station,difficulty_walking,5,black,isolated
+5,0,,All,fuel_station,difficulty_walking,5,black,isolated
 0,10851,0.0,Kapiti Coast,fuel_station,difficulty_walking,5,#79D151,0-2
 1,9576,2.0,Kapiti Coast,fuel_station,difficulty_walking,5,#22A784,2-4
 2,3207,4.0,Kapiti Coast,fuel_station,difficulty_walking,5,#29788E,4-6
@@ -8008,7 +8008,7 @@
 2,4791,4.0,All,health_services,difficulty_walking,5,#29788E,4-6
 3,1572,6.0,All,health_services,difficulty_walking,5,#404387,6-8
 4,3414,8.0,All,health_services,difficulty_walking,5,#440154,8+
-5,13848,,All,health_services,difficulty_walking,5,black,isolated
+5,0,,All,health_services,difficulty_walking,5,black,isolated
 0,20196,0.0,Kapiti Coast,health_services,difficulty_walking,5,#79D151,0-2
 1,12384,2.0,Kapiti Coast,health_services,difficulty_walking,5,#22A784,2-4
 2,3096,4.0,Kapiti Coast,health_services,difficulty_walking,5,#29788E,4-6
@@ -8146,7 +8146,7 @@
 2,192,2.0,All,water,difficulty_walking,5,#29788E,2-3
 3,42,3.0,All,water,difficulty_walking,5,#404387,3-4
 4,7158,4.0,All,water,difficulty_walking,5,#440154,4+
-5,13848,,All,water,difficulty_walking,5,black,isolated
+5,0,,All,water,difficulty_walking,5,black,isolated
 0,0,0.0,Kapiti Coast,water,difficulty_walking,5,#79D151,0-1
 1,0,1.0,Kapiti Coast,water,difficulty_walking,5,#22A784,1-2
 2,0,2.0,Kapiti Coast,water,difficulty_walking,5,#29788E,2-3

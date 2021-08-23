@@ -148,7 +148,7 @@ zones = gpd.read_file('./data/raw/TransportZones.gdb', driver='FileGDB',layer='T
 zones = zones[['Location','geometry']]
 zones = zones.to_crs(df.crs)
 df = gpd.sjoin(df, zones, how='inner', op='within')
-geoids = geoids.merge(df[['geoid','Location']], on='geoid', how='left')
+geoids = geoids.merge(df[['geoid','Location']], on='geoid', how='inner')
 geoids.drop_duplicates(inplace=True)
 # join with census data
 df_census = pd.read_csv('./data/raw/Individual_part2_totalNZ-wide_format_updated_16-7-20.csv')
