@@ -1,9 +1,14 @@
+from operator import truediv
 import init_osrm
 import determine_nearest
 import query
+import query_time
+import determine_nearest_time
+import determine_nearest_time_parcel
 import yaml
 import subprocess
 import numpy as np
+import pandas as pd
 # functions - data management
 import psycopg2
 from sqlalchemy.types import Float, Integer
@@ -45,14 +50,17 @@ def main(config_filename=None):
     db = init_db(config)
 
     # add origins and destinations
-    init_destinations(db, config)
-    init_origins(db, config)
+    #init_destinations(db, config)
+    #init_origins(db, config)
     
     # query
-    query.main(config)
+    #query.main(config)
+    query_time.main(config)
 
     # calculate nearest
-    determine_nearest.main(db)
+    # determine_nearest.main(db)
+    #determine_nearest_time.main(db)
+    determine_nearest_time_parcel.main(db)
 
     # shutdown the OSRM server
     db['con'].close()
@@ -93,40 +101,40 @@ def init_origins(db, config):
     origin = gpd.read_file(r'{}'.format(config['set_up']['origin_file_directory']))
     origin = origin.to_crs("EPSG:{}".format(projection))
     # import transport zone for clip
-    zones = gpd.read_file('./data/raw/TransportZones.gdb', driver='FileGDB',layer='TransportZoneBoundaries')
-    zones = zones[['Location','geometry']]
-    zones['geometry'] = zones.geometry.buffer(-10)
-    zones = zones.to_crs(origin.crs)
+    # zones = gpd.read_file('./data/raw/TransportZones.gdb', driver='FileGDB',layer='TransportZoneBoundaries')
+    # zones = zones[['Location','geometry']]
+    # zones['geometry'] = zones.geometry.buffer(-10)
+    # zones = zones.to_crs(origin.crs)
     
     # clip
     #origin = gpd.clip(origin, zones)
     # remove MultiPolygons by taking the largest
-    is_mp = [type(origin.loc[i].geometry)==MultiPolygon for i in origin.index]
-    # origin = origin[[not i for i in is_mp]]
-    count_mp = sum(is_mp)
-    print("There were ", count_mp, "Multipolygons found and largest kept")
-    for o in origin.index:
-        p = origin.loc[o].geometry
-        if p.geom_type == 'MultiPolygon':
-            # print(o)
-            # mp = p
-            origin.loc[o,'geometry'] = max(p, key=lambda a: a.area)
-            # print(origin.loc[o].geometry)
-    # import code
+    # is_mp = [type(origin.loc[i].geometry)==MultiPolygon for i in origin.index]
+    # # origin = origin[[not i for i in is_mp]]
+    # count_mp = sum(is_mp)
+    # print("There were ", count_mp, "Multipolygons found and largest kept")
+    # for o in origin.index:
+    #     p = origin.loc[o].geometry
+    #     if p.geom_type == 'MultiPolygon':
+    #         # print(o)
+    #         # mp = p
+    #         origin.loc[o,'geometry'] = max(p, key=lambda a: a.area)
+    #         # print(origin.loc[o].geometry)
+    # # import code
     # code.interact(local=locals())
     # origin = _explode(origin)
     # export to sql
     # blocks    
     # import code
     # code.interact(local=locals())
-    blocks = origin.copy()
-    blocks = origin[[config['orig_id'],'geometry','C18_CURPop']]
-    blocks['geometry'] = blocks['geometry'].apply(lambda x: WKTElement(x.wkt, srid=projection))
-    blocks.to_sql('blocks', engine, if_exists='replace', dtype={'geometry': Geometry('POLYGON', srid= projection)})
+    # blocks = origin.copy()
+    # blocks = origin[[config['orig_id'],'geometry']]#,'C18_CURPop']]
+    # blocks['geometry'] = blocks['geometry'].apply(lambda x: WKTElement(x.wkt, srid=projection))
+    # blocks.to_sql('blocks', engine, if_exists='replace', dtype={'geometry': Geometry('POLYGON', srid= projection)})
     # origins
     origin['centroid'] = origin.centroid
     origin['geom'] = origin['centroid'].apply(lambda x: WKTElement(x.wkt, srid=projection))
-    origin = origin[[config['orig_id'],'geom','C18_CURPop']]
+    origin = origin[[config['orig_id'],'geom']]#,'C18_CURPop']]
     # # origin.set_index(config['orig_id'])
     origin.to_sql('origin', engine, if_exists='replace', dtype={'geom': Geometry('POINT', srid= projection)})
     logger.info('Successfully exported origin shapefile to SQL')
@@ -150,38 +158,42 @@ def init_destinations(db, config):
         gdf = gpd.GeoDataFrame()
         count = 0
         id_dest = []
-        for dest_type in types:
-            file = config['set_up']['destination_file_directory'][count]
-            df_type = gpd.read_file(r'{}'.format(file))
-            if dest_type == 'supermarket':
-                df_type['lon'] = list(df_type['X'].astype(float))
-                df_type['lat'] = list(df_type['Y'].astype(float))
-                geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
-                crs = {'init': 'epsg:{}'.format(projection)}
-                df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
-            if dest_type == 'health_services':
-                df_type['lon'] = list(df_type['X'].astype(float))
-                df_type['lat'] = list(df_type['Y'].astype(float))
-                geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
-                crs = {'init': 'epsg:{}'.format(projection)}
-                df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
-            # df_type = pd.read_csv('data/destinations/' + dest_type + '_FL.csv', encoding = "ISO-8859-1", usecols = ['id','name','lat','lon'])
-            df_type['dest_type'] = dest_type
-            df_type = df_type.to_crs("EPSG:{}".format(projection))
-            gdf = gdf.append(df_type)
-            # import code
-            # code.interact(local=locals())
-            id_dest = np.append(id_dest, df_type[config['set_up']['dest_id_colname'][count]].values, axis=0)
-            count += 1
-            logger.info('{} loaded'.format(dest_type))
+        #for dest_type in types:
+        file = config['set_up']['destination_file_directory'][count]
+        df_type = pd.read_csv(r'{}'.format(file))
+        geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
+        crs = {'init': 'epsg:{}'.format(projection)}
+        df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
+        df_type['id_dest'] = df_type['dest_id']
+        # if dest_type == 'supermarket':
+        #     df_type['lon'] = list(df_type['X'].astype(float))
+        #     df_type['lat'] = list(df_type['Y'].astype(float))
+        #     geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
+        #     crs = {'init': 'epsg:{}'.format(projection)}
+        #     df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
+        # if dest_type == 'health_services':
+        #     df_type['lon'] = list(df_type['X'].astype(float))
+        #     df_type['lat'] = list(df_type['Y'].astype(float))
+        #     geometry = [Point(xy) for xy in zip(df_type['lon'], df_type['lat'])]
+        #     crs = {'init': 'epsg:{}'.format(projection)}
+        #     df_type = gpd.GeoDataFrame(df_type, crs=crs, geometry=geometry)
+        # # df_type = pd.read_csv('data/destinations/' + dest_type + '_FL.csv', encoding = "ISO-8859-1", usecols = ['id','name','lat','lon'])
+        # df_type['dest_type'] = dest_type
+        df_type = df_type.to_crs("EPSG:{}".format(projection))
+        gdf = gdf.append(df_type)
+        # import code
+        # code.interact(local=locals())
+        id_dest = np.append(id_dest, df_type[config['set_up']['dest_id_colname'][count]].values, axis=0)
+        count += 1
+        # logger.info('{} loaded'.format(dest_type))
         # set a unique id for each destination
-        gdf['id_dest'] = range(len(gdf))
+        # gdf['id_dest'] = range(len(gdf))
         # retrieve id from file
-        gdf['id_type'] = id_dest
+        # gdf['id_type'] = id_dest
         # prepare for sql
         gdf['geom'] = gdf['geometry'].apply(lambda x: WKTElement(x.wkt, srid=projection))
         #drop all columns except id, dest_type, and geom
-        gdf = gdf[['id_dest','id_type','dest_type','geom']]
+        gdf = gdf[['id_dest','dest_type','geom', '0', '1', '2', '3', '4', '5']]
         # set index
         gdf.set_index(['id_dest','dest_type'])
         # export to sql
