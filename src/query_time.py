@@ -50,8 +50,8 @@ def main(config):
     for time in time_steps:
         print(time)
         origxdest = query_points(db, config, time)
-        origxdest.to_sql('parcel_distance', db['engine'], if_exists='append',index=False)
-        #write_to_postgres(origxdest, db)
+        # origxdest.to_sql('parcel_distance', db['engine'], if_exists='append',index=False)
+        write_to_postgres(origxdest, db, time)
     # close the connection
     db['con'].close()
     logger.info('Database connection closed')
@@ -78,11 +78,11 @@ def query_points(db, config, time):
     logger.info('Querying invoked for {} in {}'.format(config['transport_mode'], config['location']['state']))
     location = config['location']
     # connect to db
-    cursor = db['con'].cursor()
+    # cursor = db['con'].cursor()
 
     # get list of all origin ids
     sql = "SELECT * FROM origin"
-    orig_df = gpd.GeoDataFrame.from_postgis(sql, db['con'], geom_col='geom')
+    orig_df = gpd.GeoDataFrame.from_postgis(sql, db['engine'], geom_col='geom')
 
     orig_df['x'] = orig_df.geom.x
     orig_df['y'] = orig_df.geom.y
@@ -193,12 +193,14 @@ def req(query_string, config):
 
 
 ############## Save to SQL ##############
-def write_to_postgres(df, db, indices=True):
+def write_to_postgres(df, db, time, indices=True):
     ''' quickly write to a postgres database
         from https://stackoverflow.com/a/47984180/5890574'''
     table_name = db['table_name']
     logger.info('Writing data to SQL')
-    df.head(0).to_sql(table_name, db['engine'], if_exists='append',index=False) #truncates the table
+    if db['replace']:
+        if time == 0:
+            df.head(0).to_sql(table_name, db['engine'], if_exists='replace',index=False) #truncates the table
     conn = db['engine'].raw_connection()
     cur = conn.cursor()
     output = io.StringIO()
@@ -207,15 +209,17 @@ def write_to_postgres(df, db, indices=True):
     cur.copy_from(output, table_name, null="") # null values become ''
     logger.info('Distances written successfully to SQL as "{}"'.format(table_name))
     # update indices
-    logger.info('Updating indices on SQL')
-    if indices == True:
-        if table_name == db['table_name']:
-            queries = [
-                        'CREATE INDEX "{0}_dest_id" ON {0} ("id_dest");'.format(db['table_name']),
-                        'CREATE INDEX "{0}_orig_id" ON {0} ("id_orig");'.format(db['table_name'])
-                        ]
-        for q in queries:
-            cur.execute(q)
+    if db['replace']:
+        if time == 0:
+            logger.info('Updating indices on SQL')
+            if indices == True:
+                if table_name == db['table_name']:
+                    queries = [
+                                'CREATE INDEX "{0}_idx_dest" ON {0} ("id_dest");'.format(db['table_name']),
+                                'CREATE INDEX "{0}_idx_orig" ON {0} ("id_orig");'.format(db['table_name'])
+                                ]
+                for q in queries:
+                    cur.execute(q)
     conn.commit()
 
 

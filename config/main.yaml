@@ -34,9 +34,10 @@ par_frac: 0.8
 SQL:
   create_db: True
   database_name: wremo # this is the name of the database
-  table_name: distance_parcel # this is the name for the table of distances
+  table_name: parcel_distance # this is the name for the table of distances
   port: '5002'
   host: 132.181.102.2
+  replace: True
 
 
 location:
