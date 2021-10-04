@@ -50,7 +50,8 @@ def main(config):
     for time in time_steps:
         print(time)
         origxdest = query_points(db, config, time)
-        write_to_postgres(origxdest, db)
+        origxdest.to_sql('parcel_distance', db['engine'], if_exists='append',index=False)
+        #write_to_postgres(origxdest, db)
     # close the connection
     db['con'].close()
     logger.info('Database connection closed')
@@ -101,7 +102,7 @@ def query_points(db, config, time):
     dest_df = dest_df.set_index('id_dest')
     dest_df['lon'] = dest_df.geom.x
     dest_df['lat'] = dest_df.geom.y
-    dest_df = dest_df[dest_df[str(time)] != 3]
+    dest_df = dest_df[dest_df[str(time)] != 3] # 3 is the value given for closed
     # list of origxdest pairs
     origxdest = pd.DataFrame(list(itertools.product(orig_df.index, dest_df.index)), columns = ['id_orig', 'id_dest'])
     for metric in config['metric']:

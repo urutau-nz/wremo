@@ -41,7 +41,7 @@ db = main.init_db(config)
 # origin = gpd.read_postgis(sql, db['con'], geom_col='geom')
 # origin['x'] = origin.geom.x
 # origin['y'] = origin.geom.y
-# origin_df = pd.DataFrame()
+# origin_df = pd.DataFrame()3475210
 # origin_df['x'] = origin['x']
 # origin_df['y'] = origin['y']
 # origin_df['id'] = origin['building_i']
@@ -160,12 +160,21 @@ df_census['Census_2018_Difficulty_walking_04_Cannot_do_at_all_CURP_5yrs_and_over
 df_census.eval("difficulty_walking = Census_2018_Difficulty_walking_02_Some_difficulty_CURP_5yrs_and_over + Census_2018_Difficulty_walking_03_A_lot_of_difficulty_CURP_5yrs_and_over + Census_2018_Difficulty_walking_04_Cannot_do_at_all_CURP_5yrs_and_over", inplace=True)
 df_census = df_census[['Area_code','difficulty_walking']]
 df_census = geoids.merge(df_census, how='right', left_on='geoid',right_on='Area_code')
+# join with dep data
+df_dep = pd.read_csv('./data/raw/nz_deprivation.csv')
+df_dep['Area_code'] = df_dep['SA12018_code'].map(str)
+df_census = df_census.merge(df_dep[['Area_code','NZDep2018']], on='Area_code', how='inner')
+dep_groups = ['social_deprivation_1-5','social_deprivation_6-10']
+df_census['social_deprivation_6-10'] = df_census[df_census['NZDep2018']>5]['population']
+df_census['social_deprivation_1-5'] = df_census[df_census['NZDep2018']<6]['population']
+df_census = df_census.fillna(0)
+
 # df = df.merge(df_census, how='right', left_on='geoid',right_on='Area_code')
 # df = df.merge(df_census, how='left', on='geoid')
 # set bins
 # bins = 100#list(range(0,21))
 # create hist and cdf
-groups = ['population','difficulty_walking']
+groups = ['population','difficulty_walking','social_deprivation_1-5','social_deprivation_6-10']
 hists = []
 for time in [0,1,2,3,4,5]:
     for group in groups:

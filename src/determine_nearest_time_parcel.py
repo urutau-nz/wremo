@@ -27,14 +27,6 @@ def main(db):
 
     # get the nearest distance for each block by each destination type
     queries_1 = ['DROP TABLE IF EXISTS nearest_parcel;',
-        # """CREATE TABLE nearesr_parcel
-        # AS
-        # SELECT distances.id_orig AS geoid, destinations.dest_type, MIN(distances.distance) AS distance
-        # FROM distances
-        # INNER JOIN destinations ON distances.id_dest = destinations.id_dest
-        # INNER JOIN blocks ON  distances.id_orig = blocks.geoid
-        # GROUP BY distances.id_orig, destinations.dest_type;
-        # """,
         'CREATE TABLE IF NOT EXISTS nearest_parcel(geoid TEXT, dest_type TEXT, distance INT, duration INT, time INT)'
     ]
     queries_2 = [''' INSERT INTO nearest_parcel (geoid, dest_type, distance, duration, time)
