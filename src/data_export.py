@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import json
 import geopandas as gpd
-import topojson as tp
+#import topojson as tp
 
 config_filename = 'main'
 # import config file
@@ -134,8 +134,8 @@ db = main.init_db(config)
 # histogram and cdf
 ###
 
-import code
-code.interact(local=locals())
+# import code
+# code.interact(local=locals())
 
 # select all geoids
 sql = "SELECT DISTINCT(geoid), population FROM nearest_block WHERE population > 0"
@@ -144,7 +144,7 @@ geoids = pd.read_sql(sql, con=db['con'])
 # # import data
 sql = "SELECT geoid, dest_type, distance, time, geometry  FROM nearest_block WHERE population > 0"
 df = gpd.read_postgis(sql, con=db['con'], geom_col='geometry')
-zones = gpd.read_file('./data/raw/TransportZones.gdb', driver='FileGDB',layer='TransportZoneBoundaries')
+zones = gpd.read_file(r'\\file.canterbury.ac.nz\Research\CivilSystems\data\new_zealand\wellington\wremo\TransportZones.gdb', driver='FileGDB',layer='TransportZoneBoundaries')
 zones = zones[['Location','geometry']]
 zones = zones.to_crs(df.crs)
 df = gpd.sjoin(df, zones, how='inner', op='within')
@@ -197,7 +197,7 @@ for time in [0,1,2,3,4,5]:
             df_new['bins'] = bin_name
             hists.append(df_new)
             for region in regions:
-                df_sub = df[(df['dest_type']==service)&(df['Location']==region)]
+                df_sub = df[(df['dest_type']==service)&(df['Location']==region)&(df['time']==time)]
                 df_census_sub = df_census[df_census['Location']==region]
                 df_sub = df_sub.merge(df_census_sub, how='right', on='geoid')
                 # create the hist
