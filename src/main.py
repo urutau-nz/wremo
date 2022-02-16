@@ -55,7 +55,7 @@ def main(config_filename=None):
     
     # query
     #query.main(config)
-    query_time.main(config)
+    #query_time.main(config)
 
     # calculate nearest
     # determine_nearest.main(db)

@@ -23,7 +23,7 @@ def main(db):
 
     times = [0,1,2,3,4,5]
 
-    dest_types = pd.read_sql('Select distinct(dest_type) from destinations', db['con'])['dest_type'].values
+    dest_types = pd.read_sql('Select distinct(dest_type) from destinations', db['engine'])['dest_type'].values
 
     # get the nearest distance for each block by each destination type
     queries_1 = ['DROP TABLE IF EXISTS nearest_parcel;',
@@ -31,7 +31,7 @@ def main(db):
     ]
     queries_2 = [''' INSERT INTO nearest_parcel (geoid, dest_type, distance, duration, time)
             SELECT dist.id_orig as geoid, destinations.dest_type, MIN(dist.distance) as distance, MIN(dist.duration) as duration, dist.time as time
-            FROM distance_parcel as dist
+            FROM parcel_distance as dist
             INNER JOIN destinations ON dist.id_dest = destinations.id_dest
             INNER JOIN origin ON  dist.id_orig = origin."building_i"
             WHERE destinations.dest_type='{}' AND dist.time='{}'
